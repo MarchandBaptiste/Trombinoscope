@@ -2,7 +2,7 @@
 <section class="hero">
 
     <?php if (isset($_SESSION['logged'])) { ?>
-        <h2>Bienvenue sur Sakila <?= $_SESSION['logged']['username'] ?></h2>
+        <h2>Bienvenue sur le trombinoscope <?= $_SESSION['logged']['login'] ?></h2>
     <?php } else { ?>
         <h2>Student Management System </h2>
     <?php } ?>

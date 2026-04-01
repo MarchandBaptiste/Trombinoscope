@@ -1,15 +1,15 @@
 CREATE TABLE Level (
-    level_id INT PRIMARY KEY,
+    level_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255)
 );
 
 CREATE TABLE Speciality (
-    speciality_id INT PRIMARY KEY,
+    speciality_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255)
 );
 
 CREATE TABLE Class (
-    class_id INT PRIMARY KEY,
+    class_id INT PRIMARY KEY AUTO_INCREMENT,
     start_date DATE,
     end_date DATE,
     name VARCHAR(255),
@@ -20,7 +20,7 @@ CREATE TABLE Class (
 );
 
 CREATE TABLE Teacher (
-    teacher_id INT PRIMARY KEY,
+    teacher_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(255),
     email VARCHAR(255) NOT NULL,
     photo_path VARCHAR(255) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Teacher (
 );
 
 CREATE TABLE Students (
-    student_id INT PRIMARY KEY,
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL,
     first_name VARCHAR(255),
     slogan VARCHAR(255),
@@ -42,10 +42,10 @@ CREATE TABLE Students (
 );
 
 CREATE TABLE Admin (
-    admin_id INT PRIMARY KEY,
-    login VARCHAR(255) NOT NULL,
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255),
-    email VARCHAR(255) NOT NULL,
     role VARCHAR(255)
 );
 
