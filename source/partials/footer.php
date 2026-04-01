@@ -13,7 +13,7 @@
       </label>
     </ul>
   </nav>
-  <p>Copyright © 2026</p>
+  <p>Copyright Justine | Baptiste © 2026</p>
 </footer>
 </body>
 
