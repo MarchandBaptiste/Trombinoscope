@@ -1,0 +1,50 @@
+/* Reset simple */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blue: #6c8eff;
+  --purple: #a78bfa;
+  --green: #34d399;
+  --orange: #f59e0b;
+  --red: #f87171;
+  --lightBlue: #8aabff;
+  --lightpurple: #c4b5fd;
+  --lightYellow: #fbbf24;
+  --lightRed: #fca5a5;
+  --bgNav: #13161d;
+  --bg: #0d0f14;
+  --text: #e8eaf0;
+  --mutedText: #7b8099;
+  --border: rgba(255, 255, 255, 0.07);
+  --borderHover: rgba(255, 255, 255, 0.14);
+  --bgCard: #181c26e9;
+}
+::selection {
+  background-color: var(--blue);
+  color: var(--text);
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+main {
+  flex: 1;
+}
+
+header,
+section,
+footer {
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
