@@ -10,45 +10,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = db();
 
     // INSCRIPTION
-    if (isset($_POST['signIn'])) {
-        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_SPECIAL_CHARS);
-        $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
-        $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_SPECIAL_CHARS);
+    // if (isset($_POST['signIn'])) {
+    //     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    //     $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_SPECIAL_CHARS);
+    //     $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+    //     $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $email_valid = (bool) filter_var($email, FILTER_VALIDATE_EMAIL);
-        $login_valid = (
-            !empty($login) &&
-            strlen($login) >= 2 &&
-            strlen($login) <= 16 &&
-            preg_match('/^[a-zA-ZÀ-ÿ0-9\s\-]+$/', $login)
-        );
-        $role_valid = (!empty($role) && preg_match('/^[a-zA-ZÀ-ÿ0-9\s\-]+$/', $role));
+    //     $email_valid = (bool) filter_var($email, FILTER_VALIDATE_EMAIL);
+    //     $login_valid = (
+    //         !empty($login) &&
+    //         strlen($login) >= 2 &&
+    //         strlen($login) <= 16 &&
+    //         preg_match('/^[a-zA-ZÀ-ÿ0-9\s\-]+$/', $login)
+    //     );
+    //     $role_valid = (!empty($role) && preg_match('/^[a-zA-ZÀ-ÿ0-9\s\-]+$/', $role));
 
-        if (!$email_valid || !$login_valid || !$role_valid || empty($password)) {
-            $sentence = 'Données manquantes ou invalides';
-        } else {
-            if (strlen($password) < 8) {
-                $message = 'Le mot de passe doit comporter au moins 8 caractères';
-            } elseif (!preg_match('/[A-Z]/', $password)) {
-                $message = 'Le mot de passe doit contenir au moins une majuscule';
-            } elseif (!preg_match('/[a-z]/', $password)) {
-                $message = 'Le mot de passe doit contenir au moins une minuscule';
-            } elseif (!preg_match('/[0-9]/', $password)) {
-                $message = 'Le mot de passe doit contenir au moins un chiffre';
-            } else {
-                $hashed = password_hash($password, PASSWORD_BCRYPT);
-                $result = setAdmin($db, $login, $email, $role, $hashed); 
+    //     if (!$email_valid || !$login_valid || !$role_valid || empty($password)) {
+    //         $sentence = 'Données manquantes ou invalides';
+    //     } else {
+    //         if (strlen($password) < 8) {
+    //             $message = 'Le mot de passe doit comporter au moins 8 caractères';
+    //         } elseif (!preg_match('/[A-Z]/', $password)) {
+    //             $message = 'Le mot de passe doit contenir au moins une majuscule';
+    //         } elseif (!preg_match('/[a-z]/', $password)) {
+    //             $message = 'Le mot de passe doit contenir au moins une minuscule';
+    //         } elseif (!preg_match('/[0-9]/', $password)) {
+    //             $message = 'Le mot de passe doit contenir au moins un chiffre';
+    //         } else {
+    //             $hashed = password_hash($password, PASSWORD_BCRYPT);
+    //             $result = setAdmin($db, $login, $email, $role, $hashed); 
                 
-                if ($result === true) {
-                    $signInSuccess = true;
-                    $sentence = 'Vous êtes inscrit !';
-                } else {
-                    $sentence = "L'inscription a échoué (login ou email déjà utilisé).";
-                }
-            }
-        }
-    }
+    //             if ($result === true) {
+    //                 $signInSuccess = true;
+    //                 $sentence = 'Vous êtes inscrit !';
+    //             } else {
+    //                 $sentence = "L'inscription a échoué (login ou email déjà utilisé).";
+    //             }
+    //         }
+    //     }
+    // }
 
     // CONNEXION
     if (isset($_POST['logIn'])) {
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="divLog">
 
-    <section class="log">
+    <!-- <section class="log">
         <h3>Inscription</h3>
 
         <?php if (isset($_POST['signIn'])): ?>
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" name="signIn">S'inscrire</button>
             </div>
         </form>
-    </section>
+    </section> -->
 
     <section class="log">
         <h3>Connexion</h3>

@@ -22,23 +22,10 @@ CREATE TABLE Class (
 CREATE TABLE Teacher (
     teacher_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(255),
-    email VARCHAR(255) NOT NULL,
-    photo_path VARCHAR(255) NOT NULL,
-    subject VARCHAR(255),
-    last_name VARCHAR(255)
-);
-
-CREATE TABLE Students (
-    student_id INT PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(255) NOT NULL,
-    first_name VARCHAR(255),
-    slogan VARCHAR(255),
-    photo_path VARCHAR(255) NOT NULL,
-    is_delegate BOOLEAN,
-    is_alternance BOOLEAN,
     last_name VARCHAR(255),
-    class_id INT NOT NULL,
-    FOREIGN KEY (class_id) REFERENCES Class(class_id)
+    email VARCHAR(255) NOT NULL,
+    photo_path VARCHAR(255) NOT NULL,
+    subject VARCHAR(255)
 );
 
 CREATE TABLE Admin (
@@ -47,6 +34,23 @@ CREATE TABLE Admin (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255),
     role VARCHAR(255)
+);
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    slogan VARCHAR(255),
+    photo_path VARCHAR(255) NOT NULL,
+    is_delegate BOOLEAN,
+    is_alternance BOOLEAN,
+    status VARCHAR(50) DEFAULT 'en_attente',
+    submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    class_id INT NOT NULL,
+    admin_id INT,
+    FOREIGN KEY (class_id) REFERENCES Class(class_id),
+    FOREIGN KEY (admin_id) REFERENCES Admin(admin_id)
 );
 
 CREATE TABLE TEACHES (
