@@ -33,11 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $modify = false;
     } else {
         $user = modifyStudent($db, $studentId, $first_name, $last_name, $email);
-        if ($user === true) {
-            $modify   = true;
-            $sentance = 'Modification effectuer avec sucess';
+        if ($user === 1) {
+            $modify = true;
+            $sentance = 'Modification effectuer avec succès';
+            header("Refresh:0");
         } else {
-            $modify   = false;
+            $modify = false;
             $sentance = "Les modifications on échouées";
         }
     }
