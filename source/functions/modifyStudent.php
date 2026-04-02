@@ -3,8 +3,8 @@ function studentSet($db, $studentId)
 {
     $sql = "SELECT 
     *
-    FROM `students` 
-    WHERE id = :id
+    FROM `student` 
+    WHERE student_id = :id
     ";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':id', $studentId, PDO::PARAM_INT);
@@ -13,9 +13,9 @@ function studentSet($db, $studentId)
 }
 function modifyStudent($db, $studentId, $first_name, $last_name, $email)
 {
-    $sql = "UPDATE `students`
+    $sql = "UPDATE `student`
     SET `first_name` = :first_name, `last_name` = :last_name, `email` = :email
-    WHERE `id` = :studentId";
+    WHERE `student_id` = :studentId";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':studentId', $studentId, PDO::PARAM_INT);
     $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
