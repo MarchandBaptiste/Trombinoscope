@@ -39,8 +39,9 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Slogan</th>
-                <th>Supprimé</th>
+                <th>Supprimer</th>
                 <th>Modifier</th>
+                <th>Valider</th>
             </tr>
         </thead>
         <tbody>
