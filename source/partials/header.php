@@ -29,7 +29,7 @@ require_once __DIR__ . '/../database/db_connect.php';
   <!-- En-tête du site -->
   <header>
     <nav class="navbar">
-      <a href="/">Accueil</a>
+      <a href="/"><img src="/assets/images/Logo_blanc_La_Manu.png" class="img-logo" alt="logo" /></a>
       <div class="nav-links">
         <ul>
           <li><a href="<?= BASE_URL ?>source/pages/search.php" class="btn-cta">Trombinoscope</a></li>
