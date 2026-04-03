@@ -4,12 +4,6 @@ if (!defined('BASE_URL')) {
   define('BASE_URL', '/');
 }
 session_start();
-// pour la déconexion
-if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
-  session_destroy();
-  header('Location: /source/pages/home.php');
-  exit();
-}
 require_once __DIR__ . '/../database/db_connect.php';
 ?>
 
@@ -37,14 +31,11 @@ require_once __DIR__ . '/../database/db_connect.php';
     <nav id="nav">
       <ul>
         <li><a href="/">Accueil</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/studentList.php">Étudiant</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/search.php">Recherche</a></li>
+        <li><a href="<?= BASE_URL ?>source/pages/search.php">Trombinoscope</a></li>
         <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/delete_student.php">Supprimer</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/edit_student.php">Modifier</a></li>
         <li>
-          <a href="<?= BASE_URL ?>source/pages/connexion.php?logout" class="<?= isset($_SESSION['logged']) ? 'active' : '' ?>">
-            <?= isset($_SESSION['logged']) ? 'Déconnexion' : 'Connexion' ?>
+          <a href="<?= BASE_URL ?>source/pages/<?= isset($_SESSION['logged']) ? 'admin.php' : 'connexion.php' ?>">
+            Administration
           </a>
         </li>
         </label>

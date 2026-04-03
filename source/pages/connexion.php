@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $log = getAdmin($db, $username, $password);
         if ($log) {
             $_SESSION['logged'] = $log;
-            header('Location: /');
+            header('Location: .//admin.php');
             exit();
         } else {
             $sentence = 'Identifiant ou mot de passe incorrect';

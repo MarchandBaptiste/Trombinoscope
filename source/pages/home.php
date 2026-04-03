@@ -11,13 +11,6 @@
     </p>
 </section>
 <section class="card-nav">
-    <a href="<?= BASE_URL ?>source/pages/studentList.php" style="--couleur: #6c8eff">
-        <div>
-            <p>🧑‍🎓</p>
-            <h4>Étudiant</h4>
-            <p>Liste des étudiant</p>
-        </div>
-    </a>
     <a href="<?= BASE_URL ?>source/pages/add_student.php" style="--couleur: #a78bfa">
         <div>
             <p>➕</p>
