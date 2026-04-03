@@ -1,22 +1,62 @@
--- 1. Création de la base de données
-CREATE DATABASE IF NOT EXISTS `trombinoscope_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE Level (
+    level_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255)
+);
 
-USE `trombinoscope_db`;
+CREATE TABLE Speciality (
+    speciality_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255)
+);
 
--- 2. Création de la table students
-CREATE TABLE IF NOT EXISTS students (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `first_name` VARCHAR(50) NOT NULL,
-    `last_name` VARCHAR(50) NOT NULL,
-    `email` VARCHAR(100) NOT NULL UNIQUE,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE = InnoDB;
+CREATE TABLE Class (
+    class_id INT PRIMARY KEY AUTO_INCREMENT,
+    start_date DATE,
+    end_date DATE,
+    name VARCHAR(255),
+    level_id INT NOT NULL,
+    speciality_id INT,
+    FOREIGN KEY (level_id) REFERENCES Level(level_id),
+    FOREIGN KEY (speciality_id) REFERENCES Speciality(speciality_id)
+);
 
--- 3. Insertion de données de test (pour le premier affichage)
-INSERT INTO
-    `students` (`first_name`, `last_name`, `email`)
-VALUES
-    ('Jean', 'Dupont', 'jean.dupont@example.com'),
-    ('Marie', 'Curie', 'm.curie@science.fr'),
-    ('Lucas', 'Martin', 'l.martin@test.com'),
-    ('Sarah', 'Connor', 's.connor@skynet.com');
+CREATE TABLE Teacher (
+    teacher_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    photo_path VARCHAR(255) NOT NULL,
+    subject VARCHAR(255)
+);
+
+CREATE TABLE Admin (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255),
+    role VARCHAR(255)
+);
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    slogan VARCHAR(255),
+    photo_path VARCHAR(255) NOT NULL,
+    is_delegate BOOLEAN,
+    is_alternance BOOLEAN,
+    status VARCHAR(50) DEFAULT 'en_attente',
+    submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    class_id INT NOT NULL,
+    admin_id INT,
+    FOREIGN KEY (class_id) REFERENCES Class(class_id),
+    FOREIGN KEY (admin_id) REFERENCES Admin(admin_id)
+);
+
+CREATE TABLE TEACHES (
+    teacher_id INT NOT NULL,
+    class_id INT NOT NULL,
+    PRIMARY KEY (teacher_id, class_id),
+    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id),
+    FOREIGN KEY (class_id) REFERENCES Class(class_id)
+);
