@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<h2>Modifier un étudiant</h2>
+<h1>Modifier un étudiant</h1>
 <div class="divLog">
     <section class="log">
         <form action="" method="POST">

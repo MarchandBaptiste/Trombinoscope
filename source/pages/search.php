@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 ?>
-<h2>Rechercher un étudiant</h2>
+<h1>Rechercher un étudiant</h1>
 <section class="data-column">
     <article>
         <form action="" method="get">

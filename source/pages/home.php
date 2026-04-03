@@ -1,14 +1,7 @@
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
 <section class="hero">
-
-    <?php if (isset($_SESSION['logged'])) { ?>
-        <h2>Bienvenue sur le Trombinoscope <?= $_SESSION['logged']['login'] ?></h2>
-    <?php } else { ?>
-        <h2>Trombinoscope</h2>
-    <?php } ?>
-    <p>
-        Explorez la liste des étudiant, ajouter-en, supprimer-en, recherche-en, modifier-en.
-    </p>
+    <h1>Retrouve tous les élèves de La Manu · Développement Web & Design</h1>
+    <p>Promo 2025–2026</p>
 </section>
 <section class="card-nav">
     <a href="<?= BASE_URL ?>source/pages/add_student.php" style="--couleur: #a78bfa">
