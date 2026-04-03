@@ -22,6 +22,7 @@ require_once __DIR__ . '/../database/db_connect.php';
   <!-- Lien vers le scipt -->
   <script src="<?= BASE_URL ?>assets/js/script.js"></script>
   <meta name="description" content="TD sur la PDO avec Sakila" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
