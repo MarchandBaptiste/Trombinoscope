@@ -5,7 +5,7 @@
     <div class="footer-link">
       <div class="link">
         <h3>Trombinoscope</h3>
-        <p>La Manu</p>
+        <a href="https://lamanu.fr/" target="_blank">La Manu</a>
         <div class="icons">
           <a href=""><i class="ri-instagram-line"></i></a>
           <a href=""><i class="ri-facebook-fill"></i></a>
