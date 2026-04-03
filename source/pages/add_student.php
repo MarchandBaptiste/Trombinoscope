@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<h2>Ajouter un étudiant</h2>
+<h1>Création de profil ou modification</h1>
 <div class="divLog">
     <section class="log">
         <?php if (isset($_POST['signIn'])) { ?>
