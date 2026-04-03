@@ -1,12 +1,13 @@
 <?php include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/search.php';
 $db = db();
-$first_name = filter_input(INPUT_GET, 'first_name', FILTER_SANITIZE_SPECIAL_CHARS);
-$last_name = filter_input(INPUT_GET, 'last_name', FILTER_SANITIZE_SPECIAL_CHARS);
-if (isset($_SESSION['logged'])) {
-    $searchStudentResults = adminSearchStudent($db, $first_name, $last_name);
-} else {
-    $searchStudentResults = searchStudent($db);
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
+    if (isset($_SESSION['logged'])) {
+        $searchStudentResults = adminSearchStudent($db, $search);
+    } else {
+        $searchStudentResults = searchStudent($db, $search);
+    }
 }
 
 ?>
@@ -15,7 +16,7 @@ if (isset($_SESSION['logged'])) {
     <article>
         <form action="" method="get">
             <label for="">Rechercher : </label>
-            <input type="text" name="first_name" value="<?= $first_name ?>" placeholder="Votre recherche...">
+            <input type="text" name="search" value="<?= $search ?>" placeholder="Votre recherche...">
             <button type="submit">Envoyer</button>
         </form>
         <table>
