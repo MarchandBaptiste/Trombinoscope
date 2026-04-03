@@ -25,22 +25,6 @@
             <p>Recherche unn étudiant</p>
         </div>
     </a>
-    <?php if (isset($_SESSION['logged'])) { ?>
-    <a href="<?= BASE_URL ?>source/pages/delete_student.php" style="--couleur: #34d399">
-        <div>
-            <p>☠️</p>
-            <h4>Supprimer</h4>
-            <p>Supprimer un étudiant</p>
-        </div>
-    </a>
-    <a href="<?= BASE_URL ?>source/pages/edit_student.php" style="--couleur: #f87171">
-        <div>
-            <p>✨</p>
-            <h4>Modifier</h4>
-            <p>Modifier un étudiant</p>
-        </div>
-    </a>
-    <?php } ?>
 </section>
 
 <?php include_once __DIR__ . '/../partials/footer.php'; ?>
