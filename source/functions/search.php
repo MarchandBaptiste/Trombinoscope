@@ -1,21 +1,36 @@
 <?php
-function searchStudent($db, $first_name = "", $last_name = "")
+function searchStudent($db, $search = "")
 {
-    $sql = "SELECT * FROM `student`
-    WHERE (`first_name` like :first_name OR `last_name` like :last_name) AND `status`= 'valide'";
+    $sql = "SELECT s.* FROM `student` s
+            JOIN `class` c ON s.`class_id` = c.`class_id`
+            JOIN `level` l ON c.`level_id` = l.`level_id`
+            WHERE (
+                s.`first_name` LIKE :search
+                OR s.`last_name` LIKE :search2
+                OR l.`name` LIKE :search3
+            )
+            AND s.`status` = 'valide'";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':first_name', $first_name . '%', PDO::PARAM_STR);
-    $stmt->bindValue(':last_name', $last_name . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search', $search . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search2', $search . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search3', $search . '%', PDO::PARAM_STR);
     $stmt->execute();
     return $stmt;
 }
-function adminSearchStudent($db, $first_name, $last_name)
+function adminSearchStudent($db, $search)
 {
-    $sql = "SELECT * FROM `student`
-    WHERE `first_name` like :first_name OR `last_name` like :last_name";
+    $sql = "SELECT s.* FROM `student` s
+            JOIN `class` c ON s.`class_id` = c.`class_id`
+            JOIN `level` l ON c.`level_id` = l.`level_id`
+            WHERE (
+                s.`first_name` LIKE :search
+                OR s.`last_name` LIKE :search2
+                OR l.`name` LIKE :search3
+            )";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':first_name', $first_name . '%', PDO::PARAM_STR);
-    $stmt->bindValue(':last_name', $last_name . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search', $search . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search2', $search . '%', PDO::PARAM_STR);
+    $stmt->bindValue(':search3', $search . '%', PDO::PARAM_STR);
     $stmt->execute();
     return $stmt;
 }
