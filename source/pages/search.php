@@ -38,6 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     </article>
 </section>
 
-<p>si admin alors on vois tous ceux valider et ce pas encore validedr </p>
-<p>mais on peut filtrer les année mais aussi ceux qui sont validée et ceux qui sont en cours de validation</p>
+
+<p>filtrer les année</p>
 <?php include_once('../partials/footer.php'); ?>
