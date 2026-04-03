@@ -20,7 +20,7 @@ require_once __DIR__ . '/../database/db_connect.php';
   <!-- Lien vers la feuille de style -->
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   <!-- Lien vers le scipt -->
-  <script src="<?= BASE_URL ?>assets/js/script.js"></script>
+  <script src="<?= BASE_URL ?>assets/js/script.js" defer></script>
   <meta name="description" content="TD sur la PDO avec Sakila" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -28,19 +28,21 @@ require_once __DIR__ . '/../database/db_connect.php';
 <body>
   <!-- En-tête du site -->
   <header>
-    <img id="hamburger" src="<?= BASE_URL ?>assets/images/icon-hamburger.svg" alt="menu" />
-    <nav id="nav">
-      <ul>
-        <li><a href="/">Accueil</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/search.php">Trombinoscope</a></li>
-        <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
-        <li>
-          <a href="<?= BASE_URL ?>source/pages/<?= isset($_SESSION['logged']) ? 'admin.php' : 'connexion.php' ?>">
-            Administration
-          </a>
-        </li>
-        </label>
-      </ul>
+    <nav class="navbar">
+      <a href="/">Accueil</a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="<?= BASE_URL ?>source/pages/search.php" class="btn-cta">Trombinoscope</a></li>
+          <li><a href="<?= BASE_URL ?>source/pages/add_student.php" class="btn">Ajouter</a></li>
+          <li>
+            <a href="<?= BASE_URL ?>source/pages/<?= isset($_SESSION['logged']) ? 'admin.php' : 'connexion.php' ?>" class="btn">
+              Administration
+            </a>
+          </li>
+        </ul>
+      </div>
+      <img class="menu-hamburger" src="<?= BASE_URL ?>assets/images/icon-hamburger.svg" alt="menu" />
     </nav>
   </header>
+  <div class="overlay"></div>
   <main>
