@@ -17,8 +17,9 @@
       <nav id="nav">
         <ul>
           <li><a href="/">Accueil</a></li>
-          <li><a href="<?= BASE_URL ?>source/pages/search.php">Trombinoscope</a></li>
           <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
+          <li><a href="<?= BASE_URL ?>source/pages/search.php">Recherche</a></li>
+          <li><a href="<?= BASE_URL ?>source/pages/connexion.php">Administration</a></li>
           </label>
         </ul>
       </nav>
