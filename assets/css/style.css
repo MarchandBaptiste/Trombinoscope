@@ -165,11 +165,22 @@ main {
 
 /* footer */
 footer {
-  background-color: var(--blue);
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
   color: var(--bg);
   padding: 2rem 4rem;
+  background:
+    radial-gradient(
+      ellipse 20% 70% at 5% 90%,
+      rgb(79 20 194) 10%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 30% 150% at 100% 60%,
+      rgba(155, 81, 224, 0.764) 0%,
+      transparent 60%
+    );
+  background-color: var(--blue);
 }
 footer div:first-of-type {
   display: flex;
@@ -185,7 +196,7 @@ footer div .link {
 }
 footer div .link h3 ~ p,
 footer div .link h3 ~ a,
-footer div .link h3 ~ nav a{
+footer div .link h3 ~ nav a {
   color: var(--mutedText);
 }
 footer div .link h3 ~ p:hover,
@@ -238,13 +249,6 @@ footer div .footer-link {
   }
 
   /* footer */
-  footer {
-    background-color: var(--blue);
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    color: var(--bg);
-    padding: 2rem 4rem;
-  }
   footer div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -261,12 +265,12 @@ footer div .footer-link {
     flex-direction: row;
   }
   footer div .icons {
-  display: flex;
-  gap: 1rem;
-}
-footer div .icons a:hover {
-  color: var(--pink);
-}
+    display: flex;
+    gap: 1rem;
+  }
+  footer div .icons a:hover {
+    color: var(--pink);
+  }
   footer div .footer-link {
     display: flex;
     flex-direction: row;

@@ -5,13 +5,13 @@
     <div class="footer-link">
       <div class="link">
         <h3>Trombinoscope</h3>
-        <a href="https://lamanu.fr/" target="_blank">La Manu</a>
         <div class="icons">
           <a href="https://www.instagram.com/lamanu.amiens/" target="_blank"><i class="ri-instagram-line"></i></a>
           <a href="https://www.facebook.com/LaManuFormation" target="_blank"><i class="ri-facebook-fill"></i></a>
           <a href="https://www.linkedin.com/school/la-manu-ecole-superieure-des-metiers-du-numerique/" target="_blank"><i class="ri-linkedin-fill"></i></a>
           <a href="https://www.youtube.com/@LaManuFormation" target="_blank"><i class="ri-youtube-fill"></i></a>
         </div>
+        <a href="https://lamanu.fr/" target="_blank">La Manu</a>
       </div>
       <div class="link">
         <h3>Navigation</h3>
