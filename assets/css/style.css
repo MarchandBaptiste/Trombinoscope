@@ -183,6 +183,10 @@ main {
   align-items: center;
   gap: 2rem;
 }
+.form div{
+  display: flex;
+  flex-direction: column;
+}
 .form .btn-cta{
   color: var(--pink);
 }
@@ -193,6 +197,7 @@ main {
   box-shadow: inset 1px 1px 6px grey;
   width: 275px;
 }
+
 /* footer */
 footer {
   border-top-left-radius: 80px;
@@ -277,6 +282,15 @@ footer div .footer-link {
     justify-content: flex-end;
     gap: 40px;
   }
+
+/* connexion admin */
+.divLog {
+  display: flex;
+  justify-content: center;
+}
+.log{
+  width: 50%;
+}
 
   /* footer */
   footer {
