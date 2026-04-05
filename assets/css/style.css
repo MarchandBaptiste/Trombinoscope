@@ -86,7 +86,7 @@ a {
   color: var(--mutedText);
 }
 .btn-second:hover {
-  background-color: rgba(128, 128, 128, 0.305);
+  background-color: rgba(128, 128, 128, 0.202);
   border: 1px solid var(--mutedText);
   color: var(--text);
 }
@@ -250,9 +250,8 @@ table {
 tbody td{
   padding-bottom: 1rem;
 }
-tbody tr td a .btn:nth-child(1){
-  color: var(--mutedText);
-  border: 1px solid var(--mutedText);
+tbody tr td:nth-child(4){
+  color: var(--pink);
 }
 /* footer */
 footer {
