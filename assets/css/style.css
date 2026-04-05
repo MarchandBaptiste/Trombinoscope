@@ -7,13 +7,13 @@
 :root {
   --blue: #33058d;
   --purple: #8861ff;
-  --green: #34d399;
+  --green: #3AB800;
   --pink: #9b51e0;
   --orange: #f59e0b;
-  --red: #f87171;
+  --red: #FF0000;
   --lightBlue: #8aabff;
-  --lightpurple: #c4b5fd;
-  --lightYellow: #fbbf24;
+  --lightpurple: #9b51e04e;
+  --lightGreen: #3ab8008e;
   --lightRed: #fca5a5;
   --bgNav: #13161d;
   --bg: #ffffff;
@@ -57,12 +57,12 @@ a {
   padding: 0.5rem 1rem;
   border: 1px solid var(--pink);
   border-radius: 40px;
-  background-color: var(--pink);
+  background-color: var(--lightpurple);
   color: var(--bg);
 }
 .btn-cta:hover {
-  background-color: var(--purple);
-  border: 1px solid var(--purple);
+  background-color: #9b51e071;
+  border: 1px solid var(--pink);
   color: white;
 }
 .btn {
@@ -72,7 +72,7 @@ a {
   color: var(--bg);
 }
 .btn:hover {
-  background-color: var(--pink);
+  background-color: var(--lightpurple);
   border: 1px solid var(--pink);
   color: white;
 }
@@ -136,11 +136,12 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
 }
 
 .nav-links a {
-  color: var(--text);
+  color: var(--pink);
   font-size: 1.4rem;
   font-weight: bolder;
 }
