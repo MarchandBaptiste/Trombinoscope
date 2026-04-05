@@ -136,11 +136,12 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
 }
 
 .nav-links a {
-  color: var(--text);
+  color: var(--pink);
   font-size: 1.4rem;
   font-weight: bolder;
 }

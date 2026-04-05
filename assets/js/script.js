@@ -9,8 +9,8 @@ menuBtn.addEventListener("click", () => {
   overlay.classList.toggle("active");
   
   if (navLinks.classList.contains("open")) {
-    menuBtn.src = "./assets/img/icon-close.svg";
+    menuBtn.src = "/assets/images/icon-close.svg";
   } else {
-    menuBtn.src = "./assets/img/menu-burger.png";
+    menuBtn.src = "/assets/images/icon-hamburger.svg";
   }
 });
