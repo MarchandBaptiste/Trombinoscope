@@ -62,6 +62,6 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
  
 </div>
 
-<a href="?logout=true">Déconexion</a>
+<a href="?logout=true" class="btn-cta">Déconexion</a>
 
 <?php include_once('../partials/footer.php'); ?>
