@@ -72,7 +72,7 @@ a {
   color: var(--bg);
 }
 .btn:hover {
-  background-color: var(--pink);
+  background-color: var(--lightpurple);
   border: 1px solid var(--pink);
   color: white;
 }
