@@ -171,12 +171,12 @@ footer {
   padding: 2rem 4rem;
   background:
     radial-gradient(
-      ellipse 20% 70% at 5% 90%,
+      ellipse 40% 50% at 1% 10%,
       rgb(79 20 194) 10%,
       transparent 70%
     ),
     radial-gradient(
-      ellipse 30% 150% at 100% 60%,
+      ellipse 50% 66% at 100% 112%,
       rgba(155, 81, 224, 0.764) 0%,
       transparent 60%
     );
