@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p class="error"><?= htmlspecialchars($sentence) ?></p>
                 <?php endif; ?>
 
-                <button type="submit" name="logIn">Connexion</button>
+                <button type="submit" name="logIn" class="btn-cta">Connexion</button>
             </div>
         </form>
     </section>
