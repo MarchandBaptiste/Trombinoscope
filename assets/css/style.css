@@ -24,8 +24,8 @@
   --bgCard: #181c26e9;
 }
 ::selection {
-  background-color: var(--blue);
-  color: var(--text);
+  background-color: var(--pink);
+  color: var(--bg);
 }
 body {
   font-family: Arial, sans-serif;
@@ -197,7 +197,9 @@ main {
   box-shadow: inset 1px 1px 6px grey;
   width: 275px;
 }
-
+.error {
+  color: var(--red);
+}
 /* footer */
 footer {
   border-top-left-radius: 80px;
