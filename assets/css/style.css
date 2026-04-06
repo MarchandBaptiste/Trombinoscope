@@ -286,11 +286,9 @@ footer div .footer-link {
   }
 
 /* connexion admin */
-.divLog {
+.log{
   display: flex;
   justify-content: center;
-}
-.log{
   width: 50%;
 }
 
