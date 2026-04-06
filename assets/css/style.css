@@ -310,7 +310,9 @@ footer div .footer-link {
 
   /* connexion admin */
   .log {
-    width: 45%;
+    display: flex;
+    justify-content: center;
+    width: 50%;
   }
 
   /* footer */
