@@ -1,5 +1,6 @@
 <?php
-function setStudent($db, $first_name, $last_name, $email, $slogan, $is_delegate, $photo_path, $class_id) {
+function setStudent($db, $first_name, $last_name, $email, $slogan, $is_delegate, $photo_path, $class_id)
+{
     try {
         $sql = "INSERT INTO `student` (`first_name`, `last_name`, `email`, `slogan`, `is_delegate`, `photo_path`, `class_id`)
                 VALUES (:first_name, :last_name, :email, :slogan, :is_delegate, :photo_path, :class_id)";

@@ -4,8 +4,6 @@ $db = db();
 
 $signIn = null;
 $sentance = '';
-
-// Récupération des classes
 $classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
         $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
         $max_size = 2 * 1024 * 1024;
-
         $file_tmp = $_FILES['photo_path']['tmp_name'];
         $file_size = $_FILES['photo_path']['size'];
         $file_ext = strtolower(pathinfo($_FILES['photo_path']['name'], PATHINFO_EXTENSION));
