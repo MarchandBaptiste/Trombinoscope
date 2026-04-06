@@ -7,10 +7,10 @@
 :root {
   --blue: #33058d;
   --purple: #8861ff;
-  --green: #3AB800;
+  --green: #3ab800;
   --pink: #9b51e0;
   --orange: #f59e0b;
-  --red: #FF0000;
+  --red: #ff0000;
   --lightBlue: #8aabff;
   --lightpurple: #9b51e04e;
   --lightGreen: #3ab8008e;
@@ -177,17 +177,17 @@ main {
   gap: 2rem;
   align-items: center;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
-.form div{
+.form div {
   display: flex;
   flex-direction: column;
 }
-.form .btn-cta{
+.form .btn-cta {
   color: var(--pink);
 }
 .form input {
@@ -285,27 +285,27 @@ footer div .footer-link {
     gap: 40px;
   }
 
-/* connexion admin */
-.log{
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
+  /* connexion admin */
+  .log {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
 
   /* footer */
   footer {
-      background:
-    radial-gradient(
-      ellipse 20% 70% at 5% 90%,
-      rgb(79 20 194) 10%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 30% 150% at 100% 60%,
-      rgba(155, 81, 224, 0.764) 0%,
-      transparent 60%
-    );
-  background-color: var(--blue);
+    background:
+      radial-gradient(
+        ellipse 20% 70% at 5% 90%,
+        rgb(79 20 194) 10%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 30% 150% at 100% 60%,
+        rgba(155, 81, 224, 0.764) 0%,
+        transparent 60%
+      );
+    background-color: var(--blue);
   }
   footer div:first-of-type {
     display: flex;
