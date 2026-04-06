@@ -21,18 +21,20 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
 
 <div>
     <div class="upper-band">
-        <h1>Administration</h1>
-        <p>Gérer les élèves · supprimer · modifier</p>
+        <div>
+            <h1>Administration</h1>
+            <p>Gérer les élèves · supprimer · modifier</p>
+        </div>
         <form action="" method="get">
             <label for="">Rechercher : </label>
             <input type="text" name="search" value="<?= $search ?>" placeholder="Votre recherche...">
             <button type="submit">Envoyer</button>
         </form>
     </div>
-    <p>filtre par année et validé ou non</p>
 </div>
 
-<div>
+<section>
+    <p>filtre par année et validé ou non</p>
     <table>
         <thead>
             <tr>
@@ -60,8 +62,8 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
         </tbody>
     </table>
  
-</div>
+    <a href="?logout=true">Déconexion</a>
+</section>
 
-<a href="?logout=true">Déconexion</a>
 
 <?php include_once('../partials/footer.php'); ?>

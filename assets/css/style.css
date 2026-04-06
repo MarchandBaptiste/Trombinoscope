@@ -36,17 +36,19 @@ body {
   flex-direction: column;
   color: var(--text);
 }
-/* main {
-  padding: 0 2rem;
+main {
   flex: 1;
-} */
+}
 
 li {
   list-style: none;
 }
-header,
+header {
+  margin-bottom: 5.5rem;
+}
 section {
-  margin-bottom: 6rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 a {
   text-decoration: none;
@@ -181,6 +183,9 @@ a {
 #home {
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
+}
+.upper-band div {
+  text-align: start;
 }
 
 /* connexion admin */
