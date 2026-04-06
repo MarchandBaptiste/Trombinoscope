@@ -20,7 +20,9 @@
             <li><a href="/">Accueil</a></li>
             <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
             <li><a href="<?= BASE_URL ?>source/pages/search.php">Recherche</a></li>
-            <li><a href="<?= BASE_URL ?>source/pages/connexion.php">Administration</a></li>
+            <li> <a href="<?= BASE_URL ?>source/pages/<?= isset($_SESSION['logged']) ? 'admin.php' : 'connexion.php' ?>">
+              Administration
+            </a></li>
             </label>
           </ul>
         </nav>
