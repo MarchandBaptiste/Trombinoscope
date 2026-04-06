@@ -99,7 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<h1>Création de profil ou modification</h1>
+<div class="upper-band">
+    <h1>Création de profil</h1>
+</div>
 <div class="divLog">
     <section class="log">
         <?php if (isset($_POST['signIn'])) { ?>
@@ -158,8 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         type="checkbox"
                         id="is_delegate"
                         name="is_delegate"
-                        value="<?= isset($_POST['signIn']) ? htmlspecialchars($is_delegate ?? '') : '' ?>"
-                        />
+                        value="<?= isset($_POST['signIn']) ? htmlspecialchars($is_delegate ?? '') : '' ?>" />
                 </div>
                 <div>
                     <label for="photo_path">Choisissez votre photo : </label>

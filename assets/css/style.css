@@ -7,10 +7,10 @@
 :root {
   --blue: #33058d;
   --purple: #8861ff;
-  --green: #3AB800;
+  --green: #3ab800;
   --pink: #9b51e0;
   --orange: #f59e0b;
-  --red: #FF0000;
+  --red: #ff0000;
   --lightBlue: #8aabff;
   --lightpurple: #9b51e04e;
   --lightGreen: #3ab8008e;
@@ -37,16 +37,18 @@ body {
   color: var(--text);
 }
 main {
-  padding: 0 2rem;
   flex: 1;
 }
 
 li {
   list-style: none;
 }
-header,
+header {
+  margin-bottom: 5.5rem;
+}
 section {
-  margin-bottom: 20px;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 a {
   text-decoration: none;
@@ -160,14 +162,35 @@ a {
   display: block;
   z-index: 0;
 }
-main {
-  padding: 10% 10%;
+/* Bandeau de haut de page */
+.upper-band {
+  color: var(--bg);
+  padding: 3rem;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse 55% 90% at -5% 8%,
+      rgb(79 20 194) 10%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 33% 94% at 100% 100%,
+      rgba(155, 81, 224, 0.5) 0%,
+      transparent 60%
+    );
+  background-color: var(--blue);
+}
+#home {
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+.upper-band div {
+  text-align: start;
 }
 
 /* connexion admin */
 .log {
-  margin-top: 7rem;
-  margin-bottom: 3rem;
+  margin: 3rem 2rem;
   border: 1px solid rgba(128, 128, 128, 0.336);
   border-radius: 20px;
   box-shadow: inset 1px 1px 6px grey;
@@ -177,17 +200,17 @@ main {
   gap: 2rem;
   align-items: center;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
-.form div{
+.form div {
   display: flex;
   flex-direction: column;
 }
-.form .btn-cta{
+.form .btn-cta {
   color: var(--pink);
 }
 .form input {
@@ -285,29 +308,25 @@ footer div .footer-link {
     gap: 40px;
   }
 
-/* connexion admin */
-.divLog {
-  display: flex;
-  justify-content: center;
-}
-.log{
-  width: 50%;
-}
+  /* connexion admin */
+  .log {
+    width: 45%;
+  }
 
   /* footer */
   footer {
-      background:
-    radial-gradient(
-      ellipse 20% 70% at 5% 90%,
-      rgb(79 20 194) 10%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 30% 150% at 100% 60%,
-      rgba(155, 81, 224, 0.764) 0%,
-      transparent 60%
-    );
-  background-color: var(--blue);
+    background:
+      radial-gradient(
+        ellipse 20% 70% at 5% 90%,
+        rgb(79 20 194) 10%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 30% 150% at 100% 60%,
+        rgba(155, 81, 224, 0.764) 0%,
+        transparent 60%
+      );
+    background-color: var(--blue);
   }
   footer div:first-of-type {
     display: flex;
