@@ -5,6 +5,9 @@ if (!defined('BASE_URL')) {
 }
 session_start();
 require_once __DIR__ . '/../database/db_connect.php';
+$db = db();
+// requette en une ligne pour afficher les class dynamiquement
+$classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
