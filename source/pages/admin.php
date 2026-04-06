@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <?php endif ?>
 
 <section>
-    <p>filtre par année et validé ou non</p>
+    <p>filtre validé ou non</p>
     <table>
         <thead>
             <tr>
