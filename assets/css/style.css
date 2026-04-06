@@ -14,7 +14,7 @@
   --lightBlue: #8aabff;
   --lightpurple: #9b51e04e;
   --lightGreen: #3ab8008e;
-  --lightRed: #fca5a5;
+  --lightRed: #ff000050;
   --bgNav: #13161d;
   --bg: #ffffff;
   --text: #000000c5;
@@ -66,7 +66,9 @@ a {
   background-color: #9b51e071;
   border: 1px solid var(--pink);
   color: white;
+  cursor: pointer;
 }
+/* classique */
 .btn {
   padding: 0.5rem 1rem;
   border: 1px solid var(--pink);
@@ -77,6 +79,49 @@ a {
   background-color: var(--lightpurple);
   border: 1px solid var(--pink);
   color: white;
+  cursor: pointer;
+}
+/* rectangulaire gris*/
+.btn-second {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--mutedText);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.404);
+  color: var(--mutedText);
+}
+.btn-second:hover {
+  background-color: rgba(128, 128, 128, 0.202);
+  border: 1px solid var(--mutedText);
+  color: var(--text);
+  cursor: pointer;
+}
+/* rectangulaire green*/
+.btn-green {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.288);
+  color: var(--green);
+}
+.btn-green:hover {
+  background-color: rgba(89, 255, 0, 0.305);
+  border: 1px solid var(--green);
+  color: var(--green);
+  cursor: pointer;
+}
+/* rectangulaire red*/
+.btn-red {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--red);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.233);
+  color: var(--red);
+}
+.btn-red:hover {
+  background-color: var(--lightRed);
+  border: 1px solid var(--red);
+  color: var(--red);
+  cursor: pointer;
 }
 
 /* nav */
@@ -217,11 +262,29 @@ a {
   border: 1px solid rgba(128, 128, 128, 0.336);
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: inset 1px 1px 6px grey;
+  box-shadow: inset 0px 0px 6px grey;
   width: 275px;
+}
+.form input:focus {
+  outline: none;
+  border: 1px solid var(--pink);
+  box-shadow: inset 0px 0px 6px rgba(230, 0, 255, 0.339);
 }
 .error {
   color: var(--red);
+}
+/* table admin */
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+tbody td{
+  padding-bottom: 1rem;
+}
+tbody tr td:nth-child(4){
+  color: var(--pink);
 }
 /* footer */
 footer {

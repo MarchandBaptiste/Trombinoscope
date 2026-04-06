@@ -50,19 +50,19 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
         <tbody>
             <?php foreach ($searchStudentResults as $student) : ?>
                 <tr>
-                    <th><?= htmlspecialchars($student['last_name']) ?></th>
+                    <td><?= htmlspecialchars($student['last_name']) ?></td>
                     <td><?= htmlspecialchars($student['first_name']) ?></td>
                     <td><?= htmlspecialchars($student['email']) ?></td>
                     <td><?= htmlspecialchars($student['slogan']) ?></td>
-                    <td><a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn">Modifier</a></td>
-                    <td><a href="<?= BASE_URL ?>source/pages/delete_student.php?id=<?= $student['student_id'] ?>" class="btn">Supprimer</a></td>
-                    <td><a href="<?= BASE_URL ?>source/pages/valid_student.php?id=<?= $student['student_id'] ?>" class="btn">Valider</a></td>
+                    <td><a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a></td>
+                    <td><a href="<?= BASE_URL ?>source/pages/delete_student.php?id=<?= $student['student_id'] ?>" class="btn-green">Supprimer</a></td>
+                    <td><a href="<?= BASE_URL ?>source/pages/valid_student.php?id=<?= $student['student_id'] ?>" class="btn-red">Valider</a></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
     </table>
  
-    <a href="?logout=true">Déconexion</a>
+    <a href="?logout=true" class="btn-cta">Déconexion</a>
 </section>
 
 
