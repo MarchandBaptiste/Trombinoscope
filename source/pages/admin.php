@@ -3,6 +3,7 @@ include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/admin.php';
 include_once __DIR__ . '/../functions/search.php';
 include_once __DIR__ . '/../functions/deletStudent.php';
+include_once __DIR__ . '/../functions/validateStudent.php';
 
 $db = db();
 $search = '';
@@ -21,6 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     if ($_POST['action'] === 'delete' && $studentId) {
         $delet = deletStudent($db, $studentId);
         $sentence = $delet ? 'La suppression a réussi' : 'La suppression a échoué';
+    }
+    if ($_POST['action'] === 'validate' && $studentId) {
+        $delet = validateStudent($db, $studentId);
+        $sentence = $delet ? 'La validation a réussi' : 'La validation a échoué';
     }
 }
 
