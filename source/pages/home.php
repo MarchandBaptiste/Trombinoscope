@@ -1,8 +1,8 @@
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
-<section class="hero">
+<div class="upper-band" id="home">
     <h1>Retrouve tous les élèves de La Manu · Développement Web & Design</h1>
     <p>Promo 2025–2026</p>
-</section>
+</div>
 <section class="card-nav">
     <a href="<?= BASE_URL ?>source/pages/add_student.php" style="--couleur: #a78bfa">
         <div>

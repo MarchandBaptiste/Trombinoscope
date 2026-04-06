@@ -44,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<h1>Modifier un étudiant</h1>
+<div class="upper-band">
+    <h1>Modifier votre profil</h1>
+</div>
 <div class="divLog">
     <section class="log">
         <form action="" method="POST">
