@@ -1,5 +1,5 @@
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
-<div class="upper-band">
+<div class="upper-band" id="home">
     <h1>Retrouve tous les élèves de La Manu · Développement Web & Design</h1>
     <p>Promo 2025–2026</p>
 </div>
