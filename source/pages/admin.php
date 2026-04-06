@@ -55,8 +55,8 @@ if (isset($_SESSION['logged']) && isset($_GET['logout'])) {
                     <td><?= htmlspecialchars($student['email']) ?></td>
                     <td><?= htmlspecialchars($student['slogan']) ?></td>
                     <td><a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a></td>
-                    <td><a href="<?= BASE_URL ?>source/pages/delete_student.php?id=<?= $student['student_id'] ?>" class="btn-green">Supprimer</a></td>
-                    <td><a href="<?= BASE_URL ?>source/pages/valid_student.php?id=<?= $student['student_id'] ?>" class="btn-red">Valider</a></td>
+                    <td><a href="<?= BASE_URL ?>source/pages/delete_student.php?id=<?= $student['student_id'] ?>" class="btn-green">Valider</a></td>
+                    <td><a href="<?= BASE_URL ?>source/pages/valid_student.php?id=<?= $student['student_id'] ?>" class="btn-red">Supprimer</a></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
