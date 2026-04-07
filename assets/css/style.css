@@ -450,6 +450,9 @@ footer div .footer-link {
   .upper-band {
     flex-direction: row;
   }
+  .upper-band div {
+    margin: 0;
+  }
 
   /* footer */
   footer {
