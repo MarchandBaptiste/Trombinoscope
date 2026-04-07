@@ -37,19 +37,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 ?>
 
-<div>
-    <div class="upper-band">
-        <div>
-            <h1>Administration</h1>
-            <p>Gérer les élèves · supprimer · modifier</p>
-        </div>
-        <form action="" method="get">
-            <label for="search">Rechercher : </label>
-            <input type="text" name="search" id="search" value="<?= htmlspecialchars($search) ?>" placeholder="Votre recherche...">
-            <button type="submit">Envoyer</button>
-        </form>
+<div class="upper-band">
+    <div>
+        <h1>Administration</h1>
+        <p>Gérer les élèves · supprimer · modifier</p>
     </div>
+    <form action="" method="get" class="search">
+        <input type="text" name="search" id="search" value="<?= htmlspecialchars($search) ?>" placeholder="Votre recherche...">
+        <button type="submit"><i class="ri-search-line"></i></button>
+    </form>
 </div>
+
 
 <?php if ($sentence): ?>
     <p><?= htmlspecialchars($sentence) ?></p>
