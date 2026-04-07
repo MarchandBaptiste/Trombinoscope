@@ -226,6 +226,11 @@ a {
       transparent 60%
     );
   background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25%;
+  align-items: center;
 }
 #home {
   border-bottom-left-radius: 80px;
@@ -233,6 +238,7 @@ a {
 }
 .upper-band div {
   text-align: start;
+  margin-bottom: 2rem;
 }
 
 /* connexion admin */
@@ -276,7 +282,42 @@ a {
   color: var(--red);
 }
 /* input de bar de recherche */
+.search {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+}
 .search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.55);
+  caret-color: #fff;
+  gap: 12px;
+  width: 30vh;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+.search input::placeholder {
+  color: var(--mutedText);
+}
+.search input:hover {
+  color: var(--bg);
+}
+.search input:focus {
+  color: var(--bg);
+}
+.search button {
   background: transparent;
   border: none;
   outline: none;
@@ -292,32 +333,14 @@ a {
   box-shadow:
     0 4px 32px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: border-color 0.25s, background 0.25s;
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+  transform: scale(0.95);
 }
-.search input::placeholder {
-  color: var(--mutedText);
-}
-
-.search input:focus {
+.search button:hover {
   color: var(--bg);
-}
-.search button{
-    background: transparent;
-  border: none;
-  outline: none;
-  color: rgba(255, 255, 255, 0.55);
-  caret-color: #fff;
-  gap: 12px;
-  padding: 14px 20px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 4px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: border-color 0.25s, background 0.25s;
+  transform: scale(1);
 }
 /* table admin */
 table {
@@ -422,6 +445,10 @@ footer div .footer-link {
     display: flex;
     justify-content: center;
     margin: 5% 30%;
+  }
+  /* Bandeau de haut de page */
+  .upper-band {
+    flex-direction: row;
   }
 
   /* footer */
