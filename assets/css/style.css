@@ -275,6 +275,50 @@ a {
 .error {
   color: var(--red);
 }
+/* input de bar de recherche */
+.search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.55);
+  caret-color: #fff;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: border-color 0.25s, background 0.25s;
+}
+.search input::placeholder {
+  color: var(--mutedText);
+}
+
+.search input:focus {
+  color: var(--bg);
+}
+.search button{
+    background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.55);
+  caret-color: #fff;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: border-color 0.25s, background 0.25s;
+}
 /* table admin */
 table {
   display: flex;
@@ -282,10 +326,10 @@ table {
   justify-content: center;
   gap: 1rem;
 }
-tbody td{
+tbody td {
   padding-bottom: 1rem;
 }
-tbody tr td:nth-child(4){
+tbody tr td:nth-child(4) {
   color: var(--pink);
 }
 /* footer */
