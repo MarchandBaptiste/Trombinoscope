@@ -19,6 +19,7 @@ $db = db();
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   <script src="<?= BASE_URL ?>assets/js/script.js" defer></script>
   <meta name="description" content="TD sur la PDO avec Sakila" />
+  <link rel="icon" type="image/jpg" href="./assets/images/Logo_blanc_La_Manu.png" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
