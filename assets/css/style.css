@@ -370,6 +370,12 @@ a {
   color: var(--pink);
   font-size: 13px;
 }
+.picture-table {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .avatar {
   width: 36px;
   height: 36px;
