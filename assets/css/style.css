@@ -356,6 +356,15 @@ a {
 .admin-panel div a {
   color: var(--pink);
 }
+/* card  */
+.card-conteneur {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: center;
+    padding: 4rem 0;
+}
 /* table admin */
 
 /* footer */
@@ -456,6 +465,48 @@ footer div .footer-link {
   .upper-band div {
     margin: 0;
   }
+    /* card student */
+.card {
+    width: 20%;
+    border: 0px solid var(--bg);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+     min-height: 55vh;
+    color: var(--bg);
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+}
+.card div {
+  display: none;
+
+}
+.card div:hover {
+  display:block;
+}
+.card:hover{
+  background: linear-gradient(var(--blue), var(--purple));
+}
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 50;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.card div:not(.blur) {
+    display: none;
+}
   /* tableau admin */
   .trombi-table {
     width: 100%;
