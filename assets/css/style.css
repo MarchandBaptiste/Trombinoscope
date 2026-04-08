@@ -714,6 +714,15 @@ footer div .footer-link {
   .badge-label-desktop {
     display: block;
   }
+  .card-overlay-hover h3 {
+  font-size: 1rem;
+}
+.card-overlay-hover .card-citation {
+  font-size: 1.2rem;
+}
+.card-badge {
+  font-size: 0.7rem;
+}
   /* tableau admin */
   .mobile-only {
     display: none;
