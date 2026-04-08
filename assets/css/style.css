@@ -216,11 +216,6 @@ a {
   text-align: center;
   background:
     radial-gradient(
-      ellipse 55% 90% at -5% 8%,
-      rgb(79 20 194) 10%,
-      transparent 70%
-    ),
-    radial-gradient(
       ellipse 33% 94% at 100% 100%,
       rgba(155, 81, 224, 0.5) 0%,
       transparent 60%
@@ -233,6 +228,9 @@ a {
   align-items: center;
 }
 #home {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
