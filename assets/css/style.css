@@ -56,7 +56,7 @@ a {
 }
 /* bouttons */
 .btn-cta {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid var(--pink);
   border-radius: 40px;
   background-color: var(--lightpurple);
@@ -70,7 +70,7 @@ a {
 }
 /* classique */
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid var(--pink);
   border-radius: 40px;
   color: var(--bg);
@@ -83,7 +83,7 @@ a {
 }
 /* rectangulaire gris*/
 .btn-second {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid var(--mutedText);
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.404);
@@ -97,7 +97,7 @@ a {
 }
 /* rectangulaire green*/
 .btn-green {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid var(--green);
   border-radius: 8px;
   background-color: var(--bg);
@@ -112,7 +112,7 @@ a {
 }
 /* rectangulaire red*/
 .btn-red {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid var(--red);
   border-radius: 8px;
   background-color: var(--bg);
@@ -291,13 +291,13 @@ a {
   background: transparent;
   border: none;
   outline: none;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--mutedText);
   caret-color: #fff;
   gap: 12px;
   width: 30vh;
   padding: 14px 20px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -326,7 +326,7 @@ a {
   gap: 12px;
   padding: 14px 20px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
