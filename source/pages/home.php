@@ -1,4 +1,6 @@
-<?php include_once __DIR__ . '/../partials/header.php'; 
+<?php 
+$pageTitle = 'Home';
+include_once __DIR__ . '/../partials/header.php'; 
 include_once __DIR__ . '/../functions/getStudent.php';
 $db = db();
 $students = getStudentB1($db);

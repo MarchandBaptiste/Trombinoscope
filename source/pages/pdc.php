@@ -1,4 +1,6 @@
-<?php include_once __DIR__ . '/../partials/header.php'; ?>
+<?php 
+$pageTitle = 'Mentions Légales';
+include_once __DIR__ . '/../partials/header.php'; ?>
 <section class="text">
     <h1>Mentions légales</h1>
     <p>

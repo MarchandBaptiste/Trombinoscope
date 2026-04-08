@@ -1,4 +1,5 @@
 <?php
+$pageTitle = 'Connexion';
 include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/admin.php';
 

@@ -1,11 +1,14 @@
-<?php include_once('../partials/header.php');
+<?php 
+$pageTitle = 'Recherche';
+include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/search.php';
 $db = db();
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
     $searchStudentResults = searchStudent($db, $search);
 }
-
+// requette en une ligne pour afficher les class dynamiquement
+$classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="upper-band">
     <div>
