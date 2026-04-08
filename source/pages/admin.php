@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <p><?= htmlspecialchars($sentence) ?></p>
 <?php endif ?>
 
-<section>
+<section class="admin-panel">
     <p>filtre validé ou non</p>
     <table class="trombi-table">
         <thead>
@@ -95,8 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <?php endforeach ?>
         </tbody>
     </table>
-
-    <a href="?logout=true" class="btn-cta">Déconnexion</a>
+    <div>
+        <a href="?logout=true" class="btn-cta">Déconnexion</a>
+    </div>
 </section>
 
 <?php include_once('../partials/footer.php'); ?>
