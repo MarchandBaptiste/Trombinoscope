@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <button type="submit"><i class="ri-search-line"></i></button>
     </form>
 </div>
-<section>
+<section class="card-conteneur">
     <?php foreach ($searchStudentResults as $student) : ?>
         <div class="card">
             <img src="/source/<?= $student['photo_path'] ?>" alt="Photo de <?= htmlspecialchars($student['first_name']) ?>">
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <p>👑 Délégué de classe</p>
                 <?php } ?>
             </div>
+            <div class="blur"></div>
         </div>
     <?php endforeach ?>
 </section>

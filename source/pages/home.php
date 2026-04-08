@@ -7,7 +7,7 @@ $students = getStudentB1($db);
     <h1>Retrouve tous les élèves de La Manu · Développement Web & Design</h1>
     <p>Promo 2025–2026</p>
 </div>
-<section>
+<section class="card-conteneur">
     <?php foreach ($students as $student) : ?>
     <div class="card">
         <img src="../source/<?= $student['photo_path'] ?>" alt="Photo de <?= htmlspecialchars($student['first_name']) ?>">
@@ -19,6 +19,7 @@ $students = getStudentB1($db);
                 <p>👑 Délégué de classe</p>
             <?php } ?>
         </div>
+        <div class="blur"></div>
     </div>
     <?php endforeach ?>
 </section>
