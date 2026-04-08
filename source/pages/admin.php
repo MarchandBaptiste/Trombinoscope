@@ -32,9 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
-    $searchStudentResults = isset($_SESSION['logged'])
-        ? adminSearchStudent($db, $search)
-        : searchStudent($db, $search);
+    $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
+    $searchStudentResults = filterStudent($db, $type, $search);
 }
 $studentsArray = [];
 foreach ($searchStudentResults as $student) {
@@ -59,7 +58,13 @@ foreach ($searchStudentResults as $student) {
 <?php endif ?>
 
 <section class="admin-panel">
-    <p>filtre validé ou non</p>
+    <form action="" method="GET" class="filter" id="filterForm">
+        <select name="type" id="typeSelect">
+            <option value="">-- Filtrer --</option>
+            <option value="valide">Valide</option>
+            <option value="en_attente">En attente</option>
+        </select>
+    </form>
     <div class="desktop-only">
         <table class="trombi-table">
             <thead>

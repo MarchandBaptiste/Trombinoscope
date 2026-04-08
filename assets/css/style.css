@@ -126,7 +126,9 @@ a {
   color: var(--red);
   cursor: pointer;
 }
-.btn-second, .btn-green, .btn-red {
+.btn-second,
+.btn-green,
+.btn-red {
   font-size: 1rem;
   line-height: 1.5;
   display: inline-block;
@@ -561,12 +563,13 @@ a {
   width: 100%;
   height: auto;
 }
-.mobile-only article div:first-of-type{
+.mobile-only article div:first-of-type {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
-.mobile-only article div :nth-child(2), article div:last-child{
+.mobile-only article div :nth-child(2),
+article div:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -678,6 +681,14 @@ footer div .footer-link {
   .upper-band div {
     margin: 0;
   }
+  /* filtre  */
+  .filter select {
+    border: 1px solid var(--pink);
+    background-color: var(--lightpurple);
+    color: var(--pink);
+    border-radius: 15px;
+    padding: 0.4rem 1.2rem;
+  }
   /* card */
   .card {
     width: 260px;
@@ -737,9 +748,8 @@ footer div .footer-link {
     object-fit: cover;
   }
   .admin-panel {
-  padding: 2rem 6rem;
-
-}
+    padding: 2rem 6rem;
+  }
   /* footer */
   footer {
     background:
