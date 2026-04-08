@@ -247,8 +247,8 @@ a {
   text-align: start;
   margin-bottom: 2rem;
 }
-.upper-band p{
-  font-size: larger
+.upper-band p {
+  font-size: larger;
 }
 /* connexion admin */
 .log {
@@ -555,13 +555,13 @@ a {
   display: none;
 }
 /* filtre  */
-  .filter select {
-    border: 1px solid var(--pink);
-    background-color: var(--lightpurple);
-    color: var(--pink);
-    border-radius: 15px;
-    padding: 0.4rem 1.2rem;
-  }
+.filter select {
+  border: 1px solid var(--pink);
+  background-color: var(--lightpurple);
+  color: var(--pink);
+  border-radius: 15px;
+  padding: 0.4rem 1.2rem;
+}
 /* carte mobil*/
 .mobile-only article {
   border: 2px solid var(--border);
@@ -592,6 +592,173 @@ article div:last-child {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+/* Page inscription */
+.page-inscription {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.inscription-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.formulaire {
+  padding: 36px 28px 32px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  box-shadow: inset 1px 1px 6px rgba(128, 128, 128, 0.2);
+}
+
+.formulaire h1 {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 6px;
+  color: rgb(0, 0, 0);
+}
+
+.formulaire .subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.champs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.champs label {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.champs input,
+.champs select {
+  background: rgba(255, 255, 255, 0.65);
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.champs input::placeholder {
+  color: rgba(117, 117, 117, 0.726);
+}
+
+.champs input:focus,
+.champs select:focus {
+  border-color: var(--pink);
+  box-shadow: inset 0px 0px 6px rgba(155, 81, 224, 0.2);
+}
+
+.champs textarea {
+  background: rgba(255, 255, 255, 0.75);
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #333;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.champs textarea::placeholder {
+  color: rgba(117, 117, 117, 0.726);
+}
+
+.champs textarea:focus {
+  border-color: var(--pink);
+  box-shadow: inset 0px 0px 6px rgba(155, 81, 224, 0.2);
+}
+
+.champs-inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.champs-inline input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  box-shadow: none;
+  accent-color: var(--pink);
+}
+
+.champs-inline label {
+  margin: 0;
+}
+
+.zonephoto {
+  border: 1.5px dashed rgba(180, 120, 255, 0.6);
+  border-radius: 10px;
+  background: rgba(180, 120, 255, 0.07);
+  padding: 22px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  position: relative;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zonephoto:hover {
+  background: rgba(180, 120, 255, 0.13);
+  border-color: rgba(180, 120, 255, 0.9);
+}
+
+.upload {
+  font-size: 13px;
+  color: rgba(180, 120, 255, 0.9);
+  pointer-events: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 8px;
+  border: 1px solid var(--pink);
+  background-color: var(--lightpurple);
+  color: var(--pink);
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #9b51e071;
+  color: white;
+}
+
+.message-retour {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.valid {
+  color: var(--green);
 }
 /* footer */
 footer {

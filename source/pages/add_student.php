@@ -1,4 +1,4 @@
-<?php 
+<?php
 $pageTitle = 'Ajout';
 include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/setStudent.php';
@@ -88,89 +88,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="upper-band">
     <h1>Création de profil</h1>
 </div>
-<div class="divLog">
-    <section class="log">
-        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($sentance)) { ?>
-            <p class="<?= $signIn ? 'valid' : 'error' ?>"><?= htmlspecialchars($sentance) ?></p>
-        <?php } ?>
-
-        <h3>Inscription</h3>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="form">
-                <div>
-                    <label for="first_name">Prénom : </label>
-                    <input
-                        type="text"
-                        id="first_name"
-                        name="first_name"
-                        placeholder="Entrez votre prénom"
-                        value="<?= htmlspecialchars($first_name ?? '') ?>"
-                        required />
-                </div>
-                <div>
-                    <label for="last_name">Nom : </label>
-                    <input
-                        type="text"
-                        id="last_name"
-                        name="last_name"
-                        placeholder="Entrez votre nom"
-                        value="<?= htmlspecialchars($last_name ?? '') ?>"
-                        required />
-                </div>
-                <div>
-                    <label for="email">Email : </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Entrez votre email"
-                        value="<?= htmlspecialchars($email ?? '') ?>"
-                        required />
-                </div>
-                <div>
-                    <label for="class_id">Classe : </label>
-                    <select id="class_id" name="class_id" required>
-                        <option value="">-- Choisissez votre classe --</option>
-                        <?php foreach ($classes as $class) { ?>
-                            <option
-                                value="<?= $class['class_id'] ?>"
-                                <?= (isset($_POST['class_id']) && $_POST['class_id'] == $class['class_id']) ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($class['name']) ?>
-                            </option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div>
-                    <label for="slogan">Slogan : </label>
-                    <input
-                        type="text"
-                        id="slogan"
-                        name="slogan"
-                        placeholder="Entrez votre slogan"
-                        value="<?= htmlspecialchars($slogan ?? '') ?>"
-                        required />
-                </div>
-                <div>
-                    <label for="is_delegate">Délégué ? : </label>
-                    <input
-                        type="checkbox"
-                        id="is_delegate"
-                        name="is_delegate"
-                        <?= isset($_POST['is_delegate']) ? 'checked' : '' ?> />
-                </div>
-                <div>
-                    <label for="photo_path">Choisissez votre photo : </label>
-                    <input
-                        type="file"
-                        id="photo_path"
-                        name="photo_path"
-                        accept="image/jpeg,image/png,image/gif,image/webp"
-                        required />
-                </div>
-                <button type="submit">S'inscrire</button>
-            </div>
-        </form>
-    </section>
+<div class="upper-band">
+    <h1>Création de profil</h1>
 </div>
+<div class="page-inscription">
+    <div class="inscription-wrapper">
+
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($sentance)) { ?>
+            <p class="message-retour <?= $signIn ? 'valid' : 'error' ?>">
+                <?= htmlspecialchars($sentance) ?>
+            </p>
+        <?php } ?>
+        <form class="formulaire" action="" method="POST" enctype="multipart/form-data">
+
+            <h1>Inscription</h1>
+            <p class="subtitle">Crée ton profil, il sera visible après validation.</p>
+
+            <div class="champs">
+                <label for="first_name">Prénom</label>
+                <input type="text" id="first_name" name="first_name"
+                    placeholder="Ton prénom"
+                    value="<?= htmlspecialchars($first_name ?? '') ?>" required />
+            </div>
+
+            <div class="champs">
+                <label for="last_name">Nom</label>
+                <input type="text" id="last_name" name="last_name"
+                    placeholder="Ton nom"
+                    value="<?= htmlspecialchars($last_name ?? '') ?>" required />
+            </div>
+
+            <div class="champs">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                    placeholder="ton@email.com"
+                    value="<?= htmlspecialchars($email ?? '') ?>" required />
+            </div>
+
+            <div class="champs">
+                <label for="class_id">Classe</label>
+                <select id="class_id" name="class_id" required>
+                    <option value="">-- Choisissez votre classe --</option>
+                    <?php foreach ($classes as $class) { ?>
+                        <option value="<?= $class['class_id'] ?>"
+                            <?= (isset($_POST['class_id']) && $_POST['class_id'] == $class['class_id']) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($class['name']) ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="champs">
+                <label for="slogan">Slogan</label>
+                <textarea id="slogan" name="slogan" rows="3"
+                    placeholder="Ta citation (10 à 255 caractères)"
+                    required><?= htmlspecialchars($slogan ?? '') ?></textarea>
+            </div>
+
+            <div class="champs champs-inline">
+                <input type="checkbox" id="is_delegate" name="is_delegate"
+                    <?= isset($_POST['is_delegate']) ? 'checked' : '' ?> />
+                <label for="is_delegate">Je suis délégué·e</label>
+            </div>
+
+            <div class="champs">
+                <label>Photo de profil</label>
+                <div class="zonephoto" onclick="document.getElementById('photo_path').click()">
+                    <input type="file" id="photo_path" name="photo_path"
+                        accept="image/jpeg,image/png,image/gif,image/webp"
+                        required style="display: none;"
+                        onchange="updatePhotoLabel(this)" />
+                    <span class="upload" id="upload-label">📷 Clique pour choisir une photo</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Valider</button>
+
+        </form>
+    </div>
+</div>
+
 
 <?php include_once('../partials/footer.php'); ?>
