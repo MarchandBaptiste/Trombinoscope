@@ -100,11 +100,13 @@ foreach ($searchStudentResults as $student) {
             <article>
                 <div>
                     <img src="/source/<?= $student['photo_path'] ?>" class="picture-table">
-                    <p><?= htmlspecialchars($student['last_name']) ?></p>
-                    <p><?= htmlspecialchars($student['first_name']) ?></p>
+                    <div>
+                        <p><?= htmlspecialchars($student['first_name']) ?></p>
+                        <p><?= htmlspecialchars($student['last_name']) ?></p>
+                    </div>
                     <p><?= htmlspecialchars($student['email']) ?></p>
                     <p><?= htmlspecialchars($student['slogan']) ?></p>
-                    <div class="action-admin">
+                    <div>
                         <a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a>
                         <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="validate" class="btn-green">Valider</button></form>
                         <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="delete" class="btn-red">Supprimer</button></form>

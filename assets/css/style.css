@@ -19,7 +19,7 @@
   --bg: #ffffff;
   --text: #000000c5;
   --mutedText: #7b8099;
-  --border: rgba(255, 255, 255, 0.07);
+  --border: rgba(0, 0, 0, 0.05);
   --borderHover: rgba(255, 255, 255, 0.14);
   --bgCard: #181c26e9;
 }
@@ -88,6 +88,7 @@ a {
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.404);
   color: var(--mutedText);
+  font-size: 1rem;
 }
 .btn-second:hover {
   background-color: rgba(128, 128, 128, 0.202);
@@ -543,22 +544,28 @@ a {
 .desktop-only {
   display: none;
 }
-
 /* carte mobil*/
 .mobile-only article {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 .mobile-only article img {
   width: 100%;
   height: auto;
 }
-.action-admin {
+.mobile-only article div:first-of-type{
   display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.mobile-only article div :nth-child(2), article div:last-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
 }
 /* mention légal */
 .text {
