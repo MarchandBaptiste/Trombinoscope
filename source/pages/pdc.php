@@ -10,9 +10,10 @@ include_once __DIR__ . '/../partials/header.php'; ?>
         <p>Le site Trombinoscope est édité par Justine Franconville et Baptiste Marchand, étudiants en développement web à La Manu, France, dans le cadre d'un projet de formation professionnelle.
             Contact : trombinoscope.lamanu@gmail.com</p>
     </div>
-    <div></div>
+    <div>
         <h2>2. Hébergement</h2>
         <p>Le site est hébergé par OVHcloud, 2 rue Kellermann, 59100 Roubaix, France — Téléphone : +33 (0)9 72 10 10 07 — www.ovhcloud.com</p>
+    </div>
     <div>
         <h2>3. Propriété intellectuelle</h2>
         <p>L'ensemble des contenus présents sur le site Trombinoscope (textes, images, photographies, logos) sont la propriété exclusive de leurs auteurs ou ont été utilisés avec autorisation. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est strictement interdite et constituerait une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la Propriété Intellectuelle.</p>
