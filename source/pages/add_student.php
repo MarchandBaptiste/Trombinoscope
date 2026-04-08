@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php } ?>
         <form class="formulaire" action="" method="POST" enctype="multipart/form-data">
 
-            <h1>Inscription</h1>
+            <h2>Inscription</h2>
             <p class="subtitle">Crée ton profil, il sera visible après validation.</p>
 
             <div class="champs">
