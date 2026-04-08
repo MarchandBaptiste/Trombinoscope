@@ -342,19 +342,22 @@ a {
   color: var(--bg);
   transform: scale(1);
 }
-/* table admin */
-table {
+/* admin panel */
+.admin-panel {
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
-tbody td {
-  padding-bottom: 1rem;
+.admin-panel div {
+  text-align: center;
 }
-tbody tr td:nth-child(4) {
+.admin-panel div a {
   color: var(--pink);
 }
+/* table admin */
+
 /* footer */
 footer {
   border-top-left-radius: 80px;
@@ -453,7 +456,40 @@ footer div .footer-link {
   .upper-band div {
     margin: 0;
   }
-
+  /* tableau admin */
+  .trombi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans, sans-serif);
+  }
+  .trombi-table thead th {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mutedText);
+    padding: 0 12px 12px;
+    text-align: left;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .trombi-table tbody tr {
+    border-bottom: 0.5px solid var(--border);
+  }
+  .trombi-table tbody td {
+    padding: 16px 12px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .trombi-table td.slogan {
+    color: var(--pink);
+    font-size: 13px;
+  }
+  .picture-table {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   /* footer */
   footer {
     background:

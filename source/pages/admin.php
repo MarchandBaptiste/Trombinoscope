@@ -53,11 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <p><?= htmlspecialchars($sentence) ?></p>
 <?php endif ?>
 
-<section>
+<section class="admin-panel">
     <p>filtre validé ou non</p>
-    <table>
+    <table class="trombi-table">
         <thead>
             <tr>
+                <th>Photo</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
@@ -70,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <tbody>
             <?php foreach ($searchStudentResults as $student) : ?>
                 <tr>
+                    <td><img src="/source/<?= $student['photo_path'] ?>" alt="Photo de <?= htmlspecialchars($student['first_name']) ?>" class="picture-table"></td>
                     <td><?= htmlspecialchars($student['last_name']) ?></td>
                     <td><?= htmlspecialchars($student['first_name']) ?></td>
                     <td><?= htmlspecialchars($student['email']) ?></td>
@@ -93,8 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <?php endforeach ?>
         </tbody>
     </table>
-
-    <a href="?logout=true" class="btn-cta">Déconnexion</a>
+    <div>
+        <a href="?logout=true" class="btn-cta">Déconnexion</a>
+    </div>
 </section>
 
 <?php include_once('../partials/footer.php'); ?>
