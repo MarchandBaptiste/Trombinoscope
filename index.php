@@ -7,23 +7,23 @@ include_once './source/partials/header.php';
 if ($page == 'home') {
   include_once "./source/pages/home.php";
 }
-if ($page == 'moviesList') {
-  include_once "./source/pages/moviesList.php";
+if ($page == 'admin') {
+  include_once "./source/pages/admin.php";
 }
-if ($page == 'actorList') {
-  include_once "./source/pages/actorList.php";
+if ($page == 'add_student') {
+  include_once "./source/pages/add_student.php";
 }
-if ($page == 'magasinPlace') {
-  include_once "./source/pages/magasinPlace.php";
+if ($page == 'connexion') {
+  include_once "./source/pages/connexion.php";
 }
-if ($page == 'financarieData') {
-  include_once "./source/pages/financarieData.php";
+if ($page == 'edit_student') {
+  include_once "./source/pages/edit_student.php";
 }
-if ($page == 'cateList') {
-  include_once "./source/pages/cateList.php";
+if ($page == 'pdc') {
+  include_once "./source/pages/pdc.php";
 }
-if ($page == 'moviActorList') {
-  include_once "./source/pages/moviActorList.php";
+if ($page == 'search') {
+  include_once "./source/pages/search.php";
 }
 
 include_once './source/partials/footer.php';
