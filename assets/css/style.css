@@ -552,6 +552,14 @@ a {
 .desktop-only {
   display: none;
 }
+/* filtre  */
+  .filter select {
+    border: 1px solid var(--pink);
+    background-color: var(--lightpurple);
+    color: var(--pink);
+    border-radius: 15px;
+    padding: 0.4rem 1.2rem;
+  }
 /* carte mobil*/
 .mobile-only article {
   border: 2px solid var(--border);
@@ -681,18 +689,10 @@ footer div .footer-link {
   .upper-band div {
     margin: 0;
   }
-  /* filtre  */
-  .filter select {
-    border: 1px solid var(--pink);
-    background-color: var(--lightpurple);
-    color: var(--pink);
-    border-radius: 15px;
-    padding: 0.4rem 1.2rem;
-  }
   /* card */
   .card {
-    width: 260px;
-    height: 340px;
+    width: 320px;
+    height: 450px;
   }
   .card-info-normal {
     padding: 1.25rem;
