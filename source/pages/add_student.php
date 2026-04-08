@@ -88,9 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="upper-band">
     <h1>Création de profil</h1>
 </div>
-<div class="upper-band">
-    <h1>Création de profil</h1>
-</div>
 <div class="page-inscription">
     <div class="inscription-wrapper">
 
@@ -162,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <button type="submit" class="btn-submit">Valider</button>
+            <button type="submit" class="btn-cta">Valider</button>
 
         </form>
     </div>
