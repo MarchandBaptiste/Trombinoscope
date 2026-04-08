@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 <section>
     <p>filtre validé ou non</p>
-    <table>
+    <table class="trombi-table">
         <thead>
             <tr>
                 <th>Nom</th>
