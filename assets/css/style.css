@@ -216,7 +216,7 @@ a {
   text-align: center;
   background: radial-gradient(
     ellipse 33% 94% at 100% 100%,
-    rgba(155, 81, 224, 0.5) 0%,
+    rgba(155, 81, 224, 1.5) 0%,
     transparent 60%
   );
   background-color: var(--blue);
@@ -290,12 +290,12 @@ a {
   border: none;
   outline: none;
   color: var(--mutedText);
-  caret-color: #fff;
+  caret-color: var(--bg);
   gap: 12px;
   width: 30vh;
   padding: 14px 20px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -320,11 +320,11 @@ a {
   border: none;
   outline: none;
   color: rgba(255, 255, 255, 0.55);
-  caret-color: #fff;
+  caret-color: var(--bg);
   gap: 12px;
   padding: 14px 20px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -354,14 +354,185 @@ a {
 .admin-panel div a {
   color: var(--pink);
 }
-/* card  */
+/* card */
 .card-conteneur {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  gap: 4rem;
+  gap: 1.5rem;
+  padding: 2rem;
   justify-content: center;
-  padding: 4rem 0;
+}
+.card {
+  position: relative;
+  width: 260px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background: linear-gradient(var(--purple), var(--blue));
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(83, 74, 183, 0.35);
+}
+/* image */
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+.card:hover img {
+  height: 50%;
+}
+.card-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 100%
+  );
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  filter: blur(4px);
+}
+.card:hover .card-gradient {
+  opacity: 0;
+}
+/* info toujours la */
+.card-info-normal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+.card:hover .card-info-normal {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+.card-info-normal h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.3rem;
+}
+.card-info-normal .card-citation-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.15rem;
+}
+.card-info-normal .card-citation {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.4;
+}
+/* hover */
+.card-overlay-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent 0%, #534ab7 30%);
+  padding: 1.1rem 1.25rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease 0.15s,
+    transform 0.35s ease 0.15s,
+    height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.card:hover .card-overlay-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.card-overlay-hover h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.3rem;
+}
+.card-overlay-hover .card-citation-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 0.15rem;
+}
+.card-overlay-hover .card-citation {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+/* badges */
+.card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+  transform: translateY(6px);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease 0.28s,
+    transform 0.3s ease 0.28s;
+}
+.card:hover .card-badges {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.card-badge--class {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.card-badge--delegate {
+  background: #fbbf24;
+  color: #78350f;
 }
 /* table admin */
 /* mention légal */
@@ -468,47 +639,6 @@ footer div .footer-link {
   }
   .upper-band div {
     margin: 0;
-  }
-  /* card student */
-  .card {
-    width: 20%;
-    border: 0px solid var(--bg);
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-    min-height: 55vh;
-    color: var(--bg);
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .card img {
-    width: 100%;
-    height: 55vh;
-    object-fit: cover;
-  }
-  .card div {
-    display: none;
-  }
-  .card div:hover {
-    display: block;
-  }
-  .card:hover {
-    background: linear-gradient(var(--blue), var(--purple));
-  }
-  .blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 50;
-    filter: blur(4px);
-    pointer-events: none;
-  }
-
-  .card div:not(.blur) {
-    display: none;
   }
   /* tableau admin */
   .trombi-table {
