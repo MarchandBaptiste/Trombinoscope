@@ -542,6 +542,9 @@ a {
   background: #fbbf24;
   color: #78350f;
 }
+.card-badge--class svg{
+  display: none;
+}
 .badge-label-desktop {
   display: none;
 }
@@ -562,7 +565,7 @@ a {
   border-radius: 15px;
   padding: 0.4rem 1.2rem;
 }
-/* carte mobil*/
+/* card mobil*/
 .mobile-only article {
   border: 2px solid var(--border);
   border-radius: 16px;
@@ -872,6 +875,9 @@ footer div .footer-link {
   .card-info-normal h3 {
     font-size: 1rem;
   }
+  .card-badge--class svg{
+  display: block;
+}
   .card-overlay-hover .card-citation-label {
     display: block;
     font-size: 0.78rem;
