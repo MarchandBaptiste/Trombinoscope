@@ -247,7 +247,9 @@ a {
   text-align: start;
   margin-bottom: 2rem;
 }
-
+.upper-band p{
+  font-size: larger
+}
 /* connexion admin */
 .log {
   margin: 3rem 2rem;
@@ -374,7 +376,7 @@ a {
 .card {
   position: relative;
   width: 170px;
-  height: 210px;
+  height: 230px;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
