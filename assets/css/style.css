@@ -214,12 +214,11 @@ a {
   color: var(--bg);
   padding: 3rem;
   text-align: center;
-  background:
-    radial-gradient(
-      ellipse 33% 94% at 100% 100%,
-      rgba(155, 81, 224, 0.5) 0%,
-      transparent 60%
-    );
+  background: radial-gradient(
+    ellipse 33% 94% at 100% 100%,
+    rgba(155, 81, 224, 0.5) 0%,
+    transparent 60%
+  );
   background-color: var(--blue);
   display: flex;
   flex-direction: column;
@@ -357,15 +356,21 @@ a {
 }
 /* card  */
 .card-conteneur {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 4rem;
-    justify-content: center;
-    padding: 4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  padding: 4rem 0;
 }
 /* table admin */
-
+/* mention légal */
+.text {
+  padding: 5rem 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 /* footer */
 footer {
   border-top-left-radius: 80px;
@@ -464,48 +469,47 @@ footer div .footer-link {
   .upper-band div {
     margin: 0;
   }
-    /* card student */
-.card {
+  /* card student */
+  .card {
     width: 20%;
     border: 0px solid var(--bg);
     border-radius: 15px;
     overflow: hidden;
     display: flex;
-     min-height: 55vh;
+    min-height: 55vh;
     color: var(--bg);
     flex-direction: column;
     padding: 1rem;
-}
+  }
 
-.card img {
+  .card img {
     width: 100%;
     height: 55vh;
     object-fit: cover;
-}
-.card div {
-  display: none;
-
-}
-.card div:hover {
-  display:block;
-}
-.card:hover{
-  background: linear-gradient(var(--blue), var(--purple));
-}
-.blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  z-index: 50;
-  filter: blur(4px);
-  pointer-events: none;
-}
-
-.card div:not(.blur) {
+  }
+  .card div {
     display: none;
-}
+  }
+  .card div:hover {
+    display: block;
+  }
+  .card:hover {
+    background: linear-gradient(var(--blue), var(--purple));
+  }
+  .blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 50;
+    filter: blur(4px);
+    pointer-events: none;
+  }
+
+  .card div:not(.blur) {
+    display: none;
+  }
   /* tableau admin */
   .trombi-table {
     width: 100%;

@@ -1,4 +1,6 @@
-<?php include_once('../partials/header.php');
+<?php 
+$pageTitle = 'Ajout';
+include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/setStudent.php';
 $db = db();
 

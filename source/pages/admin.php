@@ -1,4 +1,5 @@
 <?php
+$pageTitle = 'Administration';
 include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/admin.php';
 include_once __DIR__ . '/../functions/search.php';

@@ -6,23 +6,17 @@ if (!defined('BASE_URL')) {
 session_start();
 require_once __DIR__ . '/../database/db_connect.php';
 $db = db();
-// requette en une ligne pour afficher les class dynamiquement
-$classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-  <!-- Définition du jeu de caractères -->
   <meta charset="UTF-8" />
-  <!-- Adaptation à la taille de l’écran -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Titre affiché dans l’onglet du navigateur -->
-  <title>Trombinoscope</title>
-  <!-- Lien vers la feuille de style -->
+  <title><?= htmlspecialchars($pageTitle ?? 'Trombinoscope')?></title>
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
-  <!-- Lien vers le scipt -->
   <script src="<?= BASE_URL ?>assets/js/script.js" defer></script>
   <meta name="description" content="TD sur la PDO avec Sakila" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">

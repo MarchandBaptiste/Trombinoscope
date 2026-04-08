@@ -1,4 +1,5 @@
 <?php
+$pageTitle = 'Modification';
 include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/modifyStudent.php';
 
