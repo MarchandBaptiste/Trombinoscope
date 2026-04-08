@@ -253,6 +253,9 @@ a {
 .error {
   color: var(--red);
 }
+.valid {
+  color: var(--green);
+}
 /* input de bar de recherche */
 .search {
   display: flex;
@@ -505,7 +508,7 @@ a {
   background: #fbbf24;
   color: #78350f;
 }
-.card-badge--class svg{
+.card-badge--class svg {
   display: none;
 }
 .badge-label-desktop {
@@ -559,7 +562,7 @@ article div:last-child {
   flex-direction: column;
   gap: 2rem;
 }
-/* Page inscription */
+/* Page inscription formulaire*/
 .page-inscription {
   display: flex;
   justify-content: center;
@@ -699,7 +702,7 @@ article div:last-child {
   pointer-events: none;
 }
 
-.formulaire .btn-cta{
+.formulaire .btn-cta {
   width: 100%;
   padding: 13px;
   font-size: 15px;
@@ -721,10 +724,6 @@ article div:last-child {
 .message-retour {
   text-align: center;
   margin-bottom: 1rem;
-}
-
-.valid {
-  color: var(--green);
 }
 /* footer */
 footer {
@@ -810,13 +809,6 @@ footer div .footer-link {
     justify-content: flex-end;
     gap: 40px;
   }
-
-  /* connexion admin */
-  .log {
-    display: flex;
-    justify-content: center;
-    margin: 5% 30%;
-  }
   /* Bandeau de haut de page */
   .upper-band {
     flex-direction: row;
@@ -838,9 +830,9 @@ footer div .footer-link {
   .card-info-normal h3 {
     font-size: 1rem;
   }
-  .card-badge--class svg{
-  display: block;
-}
+  .card-badge--class svg {
+    display: block;
+  }
   .card-overlay-hover .card-citation-label {
     display: block;
     font-size: 0.78rem;
@@ -888,6 +880,71 @@ footer div .footer-link {
   .admin-panel {
     padding: 2rem 6rem;
   }
+  /* Page inscription formulaire*/
+  .page-inscription {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .inscription-wrapper {
+    max-width: 60%;
+  }
+
+  .inscription-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.inscription-etape {
+    display: flex;
+    min-height: 420px;
+}
+
+.inscription-panneau {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.inscription-panneau--violet {
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    color: white;
+}
+
+.inscription-panneau--violet h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.inscription-accroche {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.inscription-panneau--blanc {
+    background: white;
+}
+
+.inscription-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.inscription-actions .btn-submit {
+    width: auto;
+    margin-top: 0;
+}
   /* footer */
   footer {
     background:
