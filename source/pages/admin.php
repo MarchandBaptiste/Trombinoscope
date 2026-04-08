@@ -32,9 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
-    $searchStudentResults = isset($_SESSION['logged'])
-        ? adminSearchStudent($db, $search)
-        : searchStudent($db, $search);
+    $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
+    $searchStudentResults = filterStudent($db, $type, $search);
+}
+$studentsArray = [];
+foreach ($searchStudentResults as $student) {
+    $studentsArray[] = $student;
 }
 ?>
 
@@ -55,47 +58,69 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <?php endif ?>
 
 <section class="admin-panel">
-    <p>filtre validé ou non</p>
-    <table class="trombi-table">
-        <thead>
-            <tr>
-                <th>Photo</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
-                <th>Slogan</th>
-                <th>Modifier</th>
-                <th>Valider</th>
-                <th>Supprimer</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($searchStudentResults as $student) : ?>
+    <form action="" method="GET" class="filter" id="filterForm">
+        <select name="type" id="typeSelect">
+            <option value="">-- Filtrer --</option>
+            <option value="valide">Valide</option>
+            <option value="en_attente">En attente</option>
+        </select>
+    </form>
+    <div class="desktop-only">
+        <table class="trombi-table">
+            <thead>
                 <tr>
-                    <td><img src="/source/<?= $student['photo_path'] ?>" alt="Photo de <?= htmlspecialchars($student['first_name']) ?>" class="picture-table"></td>
-                    <td><?= htmlspecialchars($student['last_name']) ?></td>
-                    <td><?= htmlspecialchars($student['first_name']) ?></td>
-                    <td><?= htmlspecialchars($student['email']) ?></td>
-                    <td><?= htmlspecialchars($student['slogan']) ?></td>
-                    <td>
-                        <a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a>
-                    </td>
-                    <td>
-                        <form method="POST">
-                            <input type="hidden" name="student_id" value="<?= $student['student_id'] ?>">
-                            <button name="action" value="validate" class="btn-green">Valider</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form method="POST">
-                            <input type="hidden" name="student_id" value="<?= $student['student_id'] ?>">
-                            <button name="action" value="delete" class="btn-red">Supprimer</button>
-                        </form>
-                    </td>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Slogan</th>
+                    <th>Modifier</th>
+                    <th>Valider</th>
+                    <th>Supprimer</th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($studentsArray as $student) : ?>
+                    <tr>
+                        <td><img src="/source/<?= $student['photo_path'] ?>" class="picture-table"></td>
+                        <td><?= htmlspecialchars($student['last_name']) ?></td>
+                        <td><?= htmlspecialchars($student['first_name']) ?></td>
+                        <td><?= htmlspecialchars($student['email']) ?></td>
+                        <td><?= htmlspecialchars($student['slogan']) ?></td>
+                        <td><a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a></td>
+                        <td>
+                            <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="validate" class="btn-green">Valider</button></form>
+                        </td>
+                        <td>
+                            <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="delete" class="btn-red">Supprimer</button></form>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mobile-only">
+        <?php foreach ($studentsArray as $student) : ?>
+            <article>
+                <div>
+                    <img src="/source/<?= $student['photo_path'] ?>" class="picture-table">
+                    <div>
+                        <p><?= htmlspecialchars($student['first_name']) ?></p>
+                        <p><?= htmlspecialchars($student['last_name']) ?></p>
+                    </div>
+                    <p><?= htmlspecialchars($student['email']) ?></p>
+                    <p><?= htmlspecialchars($student['slogan']) ?></p>
+                    <div>
+                        <a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn-second">Modifier</a>
+                        <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="validate" class="btn-green">Valider</button></form>
+                        <form method="POST"><input type="hidden" name="student_id" value="<?= $student['student_id'] ?>"><button name="action" value="delete" class="btn-red">Supprimer</button></form>
+                    </div>
+                </div>
+            </article>
+        <?php endforeach ?>
+    </div>
+
     <div>
         <a href="?logout=true" class="btn-cta">Déconnexion</a>
     </div>

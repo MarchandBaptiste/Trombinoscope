@@ -23,7 +23,7 @@ $classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fet
     <?php foreach ($searchStudentResults as $student) : ?>
         <div class="card">
             <img
-                src="../source/<?= htmlspecialchars($student['photo_path']) ?>"
+                src="/source/<?= htmlspecialchars($student['photo_path']) ?>"
                 alt="Photo de <?= htmlspecialchars($student['first_name']) ?>">
             <div class="card-gradient"></div>
             <div class="card-info-normal">
