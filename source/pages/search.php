@@ -43,7 +43,7 @@ $classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fet
                             <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                             <path d="M6 12v5c3 3 9 3 12 0v-5" />
                         </svg>
-                        <?= htmlspecialchars($student['class_name'] ?? 'B1') ?>
+                        <?= htmlspecialchars($student['class_name'] ?? '') ?>
                     </span>
                     <?php if ($student['is_delegate'] == 1) : ?>
                         <span class="card-badge card-badge--delegate">
