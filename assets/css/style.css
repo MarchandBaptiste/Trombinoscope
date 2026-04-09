@@ -713,6 +713,14 @@ article div:last-child {
   align-items: center;
   justify-content: center;
 }
+.zonephoto input{
+  display: none;
+}
+.zonephoto label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .zonephoto:hover {
   background: rgba(180, 120, 255, 0.13);
@@ -743,6 +751,123 @@ article div:last-child {
 .message-retour {
   text-align: center;
   margin-bottom: 1rem;
+}
+/* edit form */
+.editForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.editForm .log {
+  width: 100%;
+  max-width: 480px;
+  padding: 36px 28px 32px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  box-shadow: inset 1px 1px 6px rgba(128, 128, 128, 0.2);
+}
+.editForm .log h2 {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 6px;
+  color: rgb(0, 0, 0);
+}
+.editForm .log .subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.editForm .form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.editForm .form label {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.editForm .form input,
+.editForm .form select {
+  background: rgba(255, 255, 255, 0.65);
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.editForm .form input::placeholder {
+  color: rgba(117, 117, 117, 0.726);
+}
+.editForm .form input:focus,
+.editForm .form select:focus {
+  border-color: var(--pink);
+  box-shadow: inset 0px 0px 6px rgba(155, 81, 224, 0.2);
+}
+.editForm .form input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  box-shadow: none;
+  accent-color: var(--pink);
+}
+.editForm .form div:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.editForm .form img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-bottom: 8px;
+  display: block;
+}
+.editForm .form small {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 4px;
+}
+.editForm .form input[type="file"] {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1.5px dashed rgba(180, 120, 255, 0.6);
+  border-radius: 10px;
+  background: rgba(180, 120, 255, 0.07);
+  padding: 22px 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.editForm .form input[type="file"]:hover {
+  background: rgba(180, 120, 255, 0.13);
+  border-color: rgba(180, 120, 255, 0.9);
+}
+.editForm .valid {
+  font-size: 13px;
+  color: #3b6d11;
+  background: #eaf3de;
+  border: 0.5px solid #639922;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.editForm .error {
+  font-size: 13px;
+  color: #a32d2d;
+  background: #fcebeb;
+  border: 0.5px solid #e24b4a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 /* footer */
 footer {

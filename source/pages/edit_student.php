@@ -10,6 +10,7 @@ if ($studentId === null) {
 }
 
 $db = db();
+$classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
 $studentData = studentSet($db, $studentId);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -87,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="upper-band">
     <h1>Modifier votre profil</h1>
 </div>
-<div class="divLog">
+<div class="editForm">
     <section class="log">
         <?php if (!empty($sentance)) { ?>
             <p class="<?= ($modify ?? false) ? 'valid' : 'error' ?>"><?= htmlspecialchars($sentance) ?></p>
@@ -156,17 +157,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         name="is_delegate"
                         <?= ($studentData['is_delegate'] ?? false) ? 'checked' : '' ?> />
                 </div>
-                <div>
-                    <label for="photo_path">Choisissez votre photo : </label>
-                    <?php if (!empty($studentData['photo_path'])) { ?>
-                        <img src="../<?= htmlspecialchars($studentData['photo_path']) ?>" alt="Photo actuelle" />
-                    <?php } ?>
-                    <input
-                        type="file"
-                        id="photo_path"
-                        name="photo_path"
-                        accept="image/jpeg,image/png,image/gif,image/webp" />
-                    <small>Laisser vide pour conserver la photo actuelle</small>
+                <div class="zonephoto">
+                    <label for="photo_path">Choisissez votre photo :
+                        <?php if (!empty($studentData['photo_path'])) { ?>
+                            <img src="../<?= htmlspecialchars($studentData['photo_path']) ?>" alt="Photo actuelle" />
+                        <?php } ?>
+                        <input
+                            type="file"
+                            id="photo_path"
+                            name="photo_path"
+                            accept="image/jpeg,image/png,image/gif,image/webp" />
+                        <small>Laisser vide pour conserver la photo actuelle</small>
+                    </label>
                 </div>
                 <button type="submit" name="modify" class="btn-cta">Modifier</button>
             </div>
