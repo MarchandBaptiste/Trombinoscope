@@ -251,41 +251,9 @@ a {
   font-size: larger;
 }
 /* connexion admin */
-.log {
-  margin: 3rem 2rem;
-  border: 1px solid rgba(128, 128, 128, 0.336);
-  border-radius: 20px;
-  box-shadow: inset 1px 1px 6px grey;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
 .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-.form div {
-  display: flex;
-  flex-direction: column;
-}
-.form .btn-cta {
-  color: var(--pink);
-}
-.form input {
-  border: 1px solid rgba(128, 128, 128, 0.336);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: inset 0px 0px 6px grey;
-  width: 275px;
-}
-.form input:focus {
-  outline: none;
-  border: 1px solid var(--pink);
-  box-shadow: inset 0px 0px 6px rgba(230, 0, 255, 0.339);
 }
 .error {
   color: var(--red);
@@ -887,6 +855,13 @@ footer div .footer-link {
   }
   .card-badge {
     font-size: 0.7rem;
+  }
+  .connexion-wrapper {
+    padding: 36px 28px 32px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: inset 1px 1px 6px rgba(128, 128, 128, 0.2);
   }
   /* tableau admin */
   .mobile-only {
