@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="actions-inline">
-                        <button type="button" class="btn-cta btn-ghost" id="btn-etape-precedente">Retour</button>
+                        <button type="button" class="btn" id="btn-etape-precedente">Retour</button>
                         <button type="submit" class="btn-cta">Valider</button>
                     </div>
                 </div>
@@ -171,7 +171,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
             </div>
-
         </form>
     </div>
 </div>

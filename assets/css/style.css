@@ -566,20 +566,14 @@ article div:last-child {
 .page-inscription {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem 1rem;
 }
 
 .inscription-wrapper {
   width: 100%;
   max-width: 480px;
-}
-
-.formulaire {
-  padding: 36px 28px 32px;
-  background: white;
-  border-radius: 20px;
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  box-shadow: inset 1px 1px 6px rgba(128, 128, 128, 0.2);
 }
 
 .formulaire h2 {
@@ -590,7 +584,9 @@ article div:last-child {
   text-align: center;
   color: rgb(0, 0, 0);
 }
-
+.formulaire .overlay-panel h2 {
+  color: var(--bg);
+}
 .formulaire .subtitle {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
@@ -702,24 +698,8 @@ article div:last-child {
   color: rgba(180, 120, 255, 0.9);
   pointer-events: none;
 }
-
-.formulaire .btn-cta {
-  width: 100%;
-  padding: 13px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 8px;
-  border: 1px solid var(--pink);
-  background-color: var(--lightpurple);
-  color: var(--pink);
-  transition: background 0.2s;
-}
-
-.btn-submit:hover {
-  background-color: #9b51e071;
-  color: white;
+.btn-cta .valide {
+  width: 400px;
 }
 
 .message-retour {
@@ -882,6 +862,7 @@ footer div .footer-link {
     padding: 2rem 6rem;
   }
   /* Page inscription formulaire*/
+
   /* Conteneur principal */
   .inscription-wrapper {
     background-color: #ffffff;
@@ -891,15 +872,13 @@ footer div .footer-link {
     width: 800px;
     max-width: 100%;
     min-height: 600px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
   }
 
-  /* Base du formulaire en pleine largeur pour englober les conteneurs absolus */
+  /* Base du formulaire */
   .formulaire {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   .champs-wrapper {
@@ -915,43 +894,43 @@ footer div .footer-link {
     justify-content: space-between;
     margin-top: 15px;
   }
-
-  /* Mécanique de superposition (comme dans le tuto) */
+  .actions-inline .btn {
+    color: var(--pink);
+  }
+  .actions-inline .btn-cta {
+    width: 200px;
+  }
   .form-container {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
+    width: 50%;
   }
 
   .etape-1-container {
     left: 0;
-    width: 50%;
     z-index: 2;
   }
 
   .etape-2-container {
     left: 0;
-    width: 50%;
     opacity: 0;
     z-index: 1;
   }
 
-  /* Le conteneur du panneau violet */
   .overlay-container {
     position: absolute;
     top: 0;
     left: 50%;
-    background: linear-gradient(var(--purple), var(--blue));
-    width: 51%;
-    height: 101%;
+    width: 50%;
+    height: 100%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
     z-index: 100;
   }
-
-  .overlay {
-    background: #6a35c9;
+  .form-overlay {
+    background: linear-gradient(to bottom right, #6a35c9, #4b148c);
     color: #ffffff;
     position: relative;
     left: -100%;
@@ -967,28 +946,28 @@ footer div .footer-link {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 40px;
     text-align: center;
     top: 0;
     height: 100%;
     width: 50%;
-    transform: translateX(0);
     transition: transform 0.6s ease-in-out;
   }
 
   .overlay-left {
     transform: translateX(-20%);
   }
+
   .overlay-right {
     right: 0;
     transform: translateX(0);
   }
-
-  /* Animation déclenchée par JS */
   .inscription-wrapper.right-panel-active .etape-1-container {
     transform: translateX(100%);
     opacity: 0;
-    pointer-events: none; /* <--- AJOUTE CECI */
+    pointer-events: none;
   }
+
   .inscription-wrapper.right-panel-active .etape-2-container {
     transform: translateX(100%);
     opacity: 1;
@@ -996,15 +975,19 @@ footer div .footer-link {
     pointer-events: auto;
     animation: show 0.6s;
   }
+
   .inscription-wrapper.right-panel-active .overlay-container {
     transform: translateX(-100%);
   }
-  .inscription-wrapper.right-panel-active .overlay {
+
+  .inscription-wrapper.right-panel-active .form-overlay {
     transform: translateX(50%);
   }
+
   .inscription-wrapper.right-panel-active .overlay-left {
     transform: translateX(0);
   }
+
   .inscription-wrapper.right-panel-active .overlay-right {
     transform: translateX(20%);
   }
