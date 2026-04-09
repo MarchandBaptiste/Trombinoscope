@@ -30,15 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Authentification</h1>
 </div>
 <div class="page-inscription">
-    <section class="inscription-wrapper">
+    <section class="connexion-wrapper">
 
         <?php if (!empty($_SESSION['logged'])): ?>
             <p class="valid">Vous êtes déjà connecté</p>
         <?php endif; ?>
 
-        <form action="" class="formulaire" method="POST">
+        <form action="" class="formulaire" id="admin" method="POST">
             <h2>Connexion</h2>
-            <div>
+            <div class="form">
                 <div class="champs">
                     <label for="logIn_username">Identifiant :</label>
                     <input
