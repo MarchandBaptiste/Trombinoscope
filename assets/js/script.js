@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const navBar = document.querySelector(".navbar");
   const overlay = document.querySelector(".overlay");
+  const btnSuivant = document.getElementById("btn-etape-suivante");
+  const btnPrecedent = document.getElementById("btn-etape-precedente");
+  const container = document.getElementById("container");
+  const selectElement = document.getElementById("typeSelect");
+  const formElement = document.getElementById("filterForm");
+
+  selectElement.addEventListener("change", function () {
+    formElement.submit();
+  });
 
   if (menuBtn && navLinks && navBar && overlay) {
     menuBtn.addEventListener("click", () => {
@@ -18,10 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const btnSuivant = document.getElementById("btn-etape-suivante");
-  const btnPrecedent = document.getElementById("btn-etape-precedente");
-  const container = document.getElementById("container");
-
   if (btnSuivant && btnPrecedent && container) {
     btnSuivant.addEventListener("click", () => {
       container.classList.add("right-panel-active");
@@ -34,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function updatePhotoLabel(input) {
-    const label = document.getElementById('upload-label');
-    if (input.files && input.files[0]) {
-        label.textContent = '✅ ' + input.files[0].name;
-    }
+  const label = document.getElementById("upload-label");
+  if (input.files && input.files[0]) {
+    label.textContent = "✅ " + input.files[0].name;
+  }
 }
