@@ -22,10 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
     if ($_POST['action'] === 'delete' && $studentId) {
         $delet = deletStudent($db, $studentId);
+        header("Refresh:0");
         $sentence = $delet ? 'La suppression a réussi' : 'La suppression a échoué';
     }
     if ($_POST['action'] === 'validate' && $studentId) {
         $delet = validateStudent($db, $studentId);
+        header("Refresh:0");
         $sentence = $delet ? 'La validation a réussi' : 'La validation a échoué';
     }
 }
