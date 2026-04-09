@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2026 at 01:03 PM
+-- Generation Time: Apr 09, 2026 at 01:18 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -143,7 +143,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `email`, `slogan`, `photo_path`, `is_delegate`, `is_alternance`, `status`, `submitted_at`, `class_id`, `admin_id`) VALUES
-(44, 'Emma', 'Richard', 'Richard@gmail.com', 'Moins il y a de clics, mieux lutilisateur se porte.', 'uploads/photo_69d77e84942e47.85521722.jpg', 1, NULL, 'valide', '2026-04-09 11:30:40', 1, NULL),
+(44, 'Emma', 'Richard', 'Richard@gmail.com', 'Moins il y a de clics, mieux lutilisateur se porte.', 'uploads/photo_69d7a5bb1791e9.84339758.jpg', 1, NULL, 'valide', '2026-04-09 11:30:40', 1, NULL),
 (45, 'Hugo', 'Durand', 'Richard@gmail.com', 'Le code propre est un code qui se lit comme un livre.', 'uploads/photo_69d771e1075614.48814780.jpg', 0, NULL, 'valide', '2026-04-09 11:31:13', 1, NULL),
 (46, 'Chloé', 'Moreau', 'Richard@gmail.com', 'Le pixel perfect ou rien.', 'uploads/photo_69d771fb27bc29.31679290.jpg', 0, NULL, 'valide', '2026-04-09 11:31:39', 1, NULL),
 (47, 'Alice', 'Laurent', 'alice@gmail.com', 'Laccessibilité nest pas une option, est un droit.', 'uploads/photo_69d772b9e37780.99341012.jpg', 0, NULL, 'valide', '2026-04-09 11:34:49', 1, NULL),
@@ -152,7 +152,7 @@ INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `email`, `slogan
 (50, 'Louis', 'Garcia', 'Michel@gmail.com', 'Le meilleur framework, c&#39;est celui que tu maîtrises.', 'uploads/photo_69d7733cd03bd4.08342874.webp', 0, NULL, 'valide', '2026-04-09 11:37:00', 3, NULL),
 (51, 'Jade', 'David', 'David@gmail.com', 'L&#38;#39;espace vide est aussi important que le contenu.', 'uploads/photo_69d773b82fba18.17370308.jpg', 1, NULL, 'valide', '2026-04-09 11:39:04', 6, NULL),
 (52, 'Arthur', 'Bertrand', 'Bertrand@gmail.com', 'On déploie vendredi ? Même pas peur', 'uploads/photo_69d773de68f166.94945155.jpg', 1, NULL, 'valide', '2026-04-09 11:39:42', 11, NULL),
-(53, 'Florian', 'Martin', 'florian@gmail.com', 'Faut être genitl', 'uploads/photo_69d77d8fadc0d5.14812413.jpg', 0, NULL, 'valide', '2026-04-09 12:21:03', 3, NULL);
+(53, 'Florian', 'Martin', 'florian@gmail.com', 'Faut être genitl', 'uploads/photo_69d7a5d6ccc057.19749709.jpg', 0, NULL, 'valide', '2026-04-09 12:21:03', 3, NULL);
 
 -- --------------------------------------------------------
 
