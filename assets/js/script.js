@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectElement = document.getElementById("typeSelect");
   const formElement = document.getElementById("filterForm");
 
-  selectElement.addEventListener("change", function () {
-    formElement.submit();
-  });
+  if (selectElement && formElement) {
+    selectElement.addEventListener("change", function () {
+      formElement.submit();
+    });
+  }
 
   if (menuBtn && navLinks && navBar && overlay) {
     menuBtn.addEventListener("click", () => {
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function updatePhotoLabel(input) {
   const label = document.getElementById("upload-label");
-  if (input.files && input.files[0]) {
-    label.textContent = "✅ " + input.files[0].name;
+  if (label && input.files && input.files[0]) {
+    label.textContent = "Fichier selectionne : " + input.files[0].name;
   }
 }
