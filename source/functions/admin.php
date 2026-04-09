@@ -14,7 +14,6 @@ function setAdmin($db, $login, $email, $role, $password)
         return true;
     } catch (PDOException $e) {
         error_log($e->getMessage());
-        var_dump($e->getMessage());
         return false; 
     }
 }

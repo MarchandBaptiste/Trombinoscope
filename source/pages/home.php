@@ -1,46 +1,52 @@
-<?php include_once __DIR__ . '/../partials/header.php'; ?>
-<section class="hero">
-
-    <?php if (isset($_SESSION['logged'])) { ?>
-        <h2>Bienvenue sur le Trombinoscope <?= $_SESSION['logged']['login'] ?></h2>
-    <?php } else { ?>
-        <h2>Trombinoscope</h2>
-    <?php } ?>
-    <p>
-        Explorez la liste des étudiant, ajouter-en, supprimer-en, recherche-en, modifier-en.
-    </p>
-</section>
-<section class="card-nav">
-    <a href="<?= BASE_URL ?>source/pages/add_student.php" style="--couleur: #a78bfa">
-        <div>
-            <p>➕</p>
-            <h4>Ajouter</h4>
-            <p>Ajouter un étudiant</p>
+<?php
+$pageTitle = 'Home';
+include_once __DIR__ . '/../partials/header.php';
+include_once __DIR__ . '/../functions/getStudent.php';
+$db = db();
+$students = getStudentB1($db);
+?>
+<div class="upper-band" id="home">
+    <h1>Retrouve tous les élèves de La Manu · Développement Web & Design</h1>
+    <p>Promo 2025–2026</p>
+</div>
+<section class="card-conteneur">
+    <?php foreach ($students as $student) : ?>
+        <div class="card">
+            <img
+                src="../source/<?= htmlspecialchars($student['photo_path']) ?>"
+                alt="Photo de <?= htmlspecialchars($student['first_name']) ?>">
+            <div class="card-gradient"></div>
+            <div class="card-info-normal">
+                <h3><?= htmlspecialchars($student['first_name']) ?> <?= htmlspecialchars($student['last_name']) ?></h3>
+                <p class="card-citation-label">Citation :</p>
+                <p class="card-citation"><?= htmlspecialchars($student['slogan']) ?></p>
+            </div>
+            <div class="card-overlay-hover">
+                <div>
+                    <h3><?= htmlspecialchars($student['first_name']) ?> <?= htmlspecialchars($student['last_name']) ?></h3>
+                    <p class="card-citation-label">Citation :</p>
+                    <p class="card-citation"><?= htmlspecialchars($student['slogan']) ?></p>
+                </div>
+                <div class="card-badges">
+                    <span class="card-badge card-badge--class">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                        B1
+                    </span>
+                    <?php if ($student['is_delegate'] == 1) : ?>
+                        <span class="card-badge card-badge--delegate">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <span class="badge-label-desktop">Délégué</span>
+                        </span>
+                    <?php endif ?>
+                </div>
+            </div>
         </div>
-    </a>
-    <a href="<?= BASE_URL ?>source/pages/search.php" style="--couleur: #f59e0b">
-        <div>
-            <p>🔎</p>
-            <h4>Recherche</h4>
-            <p>Recherche unn étudiant</p>
-        </div>
-    </a>
-    <?php if (isset($_SESSION['logged'])) { ?>
-    <a href="<?= BASE_URL ?>source/pages/delete_student.php" style="--couleur: #34d399">
-        <div>
-            <p>☠️</p>
-            <h4>Supprimer</h4>
-            <p>Supprimer un étudiant</p>
-        </div>
-    </a>
-    <a href="<?= BASE_URL ?>source/pages/edit_student.php" style="--couleur: #f87171">
-        <div>
-            <p>✨</p>
-            <h4>Modifier</h4>
-            <p>Modifier un étudiant</p>
-        </div>
-    </a>
-    <?php } ?>
+    <?php endforeach ?>
 </section>
 
 <?php include_once __DIR__ . '/../partials/footer.php'; ?>

@@ -1,16 +1,39 @@
 </main>
 <!-- Pied de page -->
 <footer>
-  <p>Trombinoscope</p>
-  <nav id="nav">
-    <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="<?= BASE_URL ?>source/pages/search.php">Trombinoscope</a></li>
-      <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
-      </label>
-    </ul>
-  </nav>
-  <p>Copyright Justine | Baptiste © 2026</p>
+  <div>
+    <div class="footer-link">
+      <div class="link">
+        <h3>Trombinoscope</h3>
+        <div class="icons">
+          <a href="https://www.instagram.com/lamanu.amiens/" target="_blank"><i class="ri-instagram-line"></i></a>
+          <a href="https://www.facebook.com/LaManuFormation" target="_blank"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/school/la-manu-ecole-superieure-des-metiers-du-numerique/" target="_blank"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://www.youtube.com/@LaManuFormation" target="_blank"><i class="ri-youtube-fill"></i></a>
+        </div>
+        <a href="https://lamanu.fr/" target="_blank">La Manu</a>
+      </div>
+      <div class="link">
+        <h3>Navigation</h3>
+        <nav id="nav">
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="<?= BASE_URL ?>source/pages/add_student.php">Ajouter</a></li>
+            <li><a href="<?= BASE_URL ?>source/pages/search.php">Recherche</a></li>
+            <li> <a href="<?= BASE_URL ?>source/pages/<?= isset($_SESSION['logged']) ? 'admin.php' : 'connexion.php' ?>">
+              Administration
+            </a></li>
+            </label>
+          </ul>
+        </nav>
+      </div>
+      <div class="link">
+        <h3>Mention légale</h3>
+        <a href="/source/pages/pdc.php">Politique de confidentialité</a>
+      </div>
+    </div>
+    <p>Copyright Justine | Baptiste © 2026</p>
+  </div>
 </footer>
 </body>
 

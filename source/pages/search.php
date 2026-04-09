@@ -1,55 +1,61 @@
-<?php include_once('../partials/header.php');
+<?php
+$pageTitle = 'Recherche';
+include_once('../partials/header.php');
 include_once __DIR__ . '/../functions/search.php';
 $db = db();
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
-    if (isset($_SESSION['logged'])) {
-        $searchStudentResults = adminSearchStudent($db, $search);
-    } else {
-        $searchStudentResults = searchStudent($db, $search);
-    }
+    $searchStudentResults = searchStudent($db, $search);
 }
-
+// requette en une ligne pour afficher les class dynamiquement
+$classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<h2>Rechercher un étudiant</h2>
-<section class="data-column">
-    <article>
-        <form action="" method="get">
-            <label for="">Rechercher : </label>
-            <input type="text" name="search" value="<?= $search ?>" placeholder="Votre recherche...">
-            <button type="submit">Envoyer</button>
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Prénom</th>
-                    <th scope="col">Email</th>
-                    <th>Slogan</th>
-                    <?php if (isset($_SESSION['logged'])) { ?>
-                        <th>Supprimé</th>
-                        <th>Modifier</th>
-                    <?php } ?>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($searchStudentResults as $student) : ?>
-                    <tr>
-                        <th scope="row"><?= htmlspecialchars($student['last_name']) ?></th>
-                        <td><?= htmlspecialchars($student['first_name']) ?></td>
-                        <td><?= htmlspecialchars($student['email']) ?></td>
-                        <td><?= htmlspecialchars($student['slogan']) ?></td>
-                        <?php if (isset($_SESSION['logged'])) { ?>
-                            <td><a href="<?= BASE_URL ?>source/pages/delete_student.php?id=<?= $student['student_id'] ?>" class="btn">Supprimé</a></td>
-                            <td><a href="<?= BASE_URL ?>source/pages/edit_student.php?id=<?= $student['student_id'] ?>" class="btn">Modifier</a></td>
-                        <?php } ?>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </article>
+<div class="upper-band">
+    <div>
+        <h1>Toute nos promos</h1>
+    </div>
+    <form action="" method="get" class="search">
+        <input type="text" name="search" id="search" value="<?= htmlspecialchars($search) ?>" placeholder="Votre recherche...">
+        <button type="submit"><i class="ri-search-line"></i></button>
+    </form>
+</div>
+<section class="card-conteneur">
+    <?php foreach ($searchStudentResults as $student) : ?>
+        <div class="card">
+            <img
+                src="/source/<?= htmlspecialchars($student['photo_path']) ?>"
+                alt="Photo de <?= htmlspecialchars($student['first_name']) ?>">
+            <div class="card-gradient"></div>
+            <div class="card-info-normal">
+                <h3><?= htmlspecialchars($student['first_name']) ?> <?= htmlspecialchars($student['last_name']) ?></h3>
+                <p class="card-citation-label">Citation :</p>
+                <p class="card-citation"><?= htmlspecialchars($student['slogan']) ?></p>
+            </div>
+            <div class="card-overlay-hover">
+                <div>
+                    <h3><?= htmlspecialchars($student['first_name']) ?> <?= htmlspecialchars($student['last_name']) ?></h3>
+                    <p class="card-citation-label">Citation :</p>
+                    <p class="card-citation"><?= htmlspecialchars($student['slogan']) ?></p>
+                </div>
+                <div class="card-badges">
+                    <span class="card-badge card-badge--class">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                        <?= htmlspecialchars($student['class_name'] ?? '') ?>
+                    </span>
+                    <?php if ($student['is_delegate'] == 1) : ?>
+                        <span class="card-badge card-badge--delegate">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <span class="badge-label-desktop">Délégué</span>
+                        </span>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
+    <?php endforeach ?>
 </section>
-
-<p>si admin alors on vois tous ceux valider et ce pas encore validedr </p>
-<p>mais on peut filtrer les année mais aussi ceux qui sont validée et ceux qui sont en cours de validation</p>
 <?php include_once('../partials/footer.php'); ?>
