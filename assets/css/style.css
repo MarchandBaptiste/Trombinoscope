@@ -882,7 +882,148 @@ footer div .footer-link {
     padding: 2rem 6rem;
   }
   /* Page inscription formulaire*/
-  
+  /* Conteneur principal */
+  .inscription-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+    min-height: 600px;
+  }
+
+  /* Base du formulaire en pleine largeur pour englober les conteneurs absolus */
+  .formulaire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .champs-wrapper {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .actions-inline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  /* Mécanique de superposition (comme dans le tuto) */
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .etape-1-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+  }
+
+  .etape-2-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  /* Le conteneur du panneau violet */
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: linear-gradient(var(--purple), var(--blue));
+    width: 51%;
+    height: 101%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+  }
+
+  .overlay {
+    background: #6a35c9;
+    color: #ffffff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .overlay-left {
+    transform: translateX(-20%);
+  }
+  .overlay-right {
+    right: 0;
+    transform: translateX(0);
+  }
+
+  /* Animation déclenchée par JS */
+  .inscription-wrapper.right-panel-active .etape-1-container {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none; /* <--- AJOUTE CECI */
+  }
+  .inscription-wrapper.right-panel-active .etape-2-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    animation: show 0.6s;
+  }
+  .inscription-wrapper.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+  }
+  .inscription-wrapper.right-panel-active .overlay {
+    transform: translateX(50%);
+  }
+  .inscription-wrapper.right-panel-active .overlay-left {
+    transform: translateX(0);
+  }
+  .inscription-wrapper.right-panel-active .overlay-right {
+    transform: translateX(20%);
+  }
+
+  @keyframes show {
+    0%,
+    49.99% {
+      opacity: 0;
+      z-index: 1;
+    }
+    50%,
+    100% {
+      opacity: 1;
+      z-index: 5;
+    }
+  }
   /* footer */
   footer {
     background:

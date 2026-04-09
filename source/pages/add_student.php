@@ -147,36 +147,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="champs">
                         <label>Photo de profil</label>
                         <div class="zonephoto" onclick="document.getElementById('photo_path').click()">
-                            <input type="file" id="photo_path" name="photo_path"
-                                accept="image/jpeg,image/png,image/gif,image/webp"
-                                required style="display: none;"
-                                onchange="updatePhotoLabel(this)" />
+                            <input type="file" id="photo_path" name="photo_path" accept="image/jpeg,image/png,image/gif,image/webp" required style="display: none;" onchange="updatePhotoLabel(this)" />
                             <span class="upload" id="upload-label">📷 Clique pour choisir une photo</span>
                         </div>
                     </div>
-                </div>
-                <div class="actions-inline">
-                    <button type="button" class="btn-cta btn-ghost" id="btn-etape-precedente">Retour</button>
-                    <button type="submit" class="btn-cta">Valider</button>
-                </div>
-            </div>
-    </div>
 
-    <div class="overlay-container">
-        <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h2>Étape 2</h2>
-                <p>Ajoute ta photo et ta citation pour terminer.</p>
+                    <div class="actions-inline">
+                        <button type="button" class="btn-cta btn-ghost" id="btn-etape-precedente">Retour</button>
+                        <button type="submit" class="btn-cta">Valider</button>
+                    </div>
+                </div>
             </div>
-            <div class="overlay-panel overlay-right">
-                <h2>Étape 1</h2>
-                <p>Renseigne tes informations personnelles.</p>
-            </div>
-        </div>
-    </div>
 
-    </form>
-</div>
+            <div class="overlay-container">
+                <div class="form-overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h2>Étape 2</h2>
+                        <p>Ajoute ta photo et ta citation pour terminer.</p>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h2>Étape 1</h2>
+                        <p>Renseigne tes informations personnelles.</p>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
 </div>
 
 
