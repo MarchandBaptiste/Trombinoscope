@@ -36,23 +36,6 @@ Le schéma suit une approche **Merise** avec les entités principales :
 
 ---
 
-## 📁 Arborescence
-
-Trombinoscope/
-├── assets/
-│   ├── css/
-│   ├── images/
-│   └── js/
-├── source/
-│   ├── database/
-│   ├── functions/
-│   ├── pages/
-│   ├── partials/
-│   └── uploads/
-└── index.php
-
----
-
 ## 👥 Équipe & Répartition
 
 | | Baptiste Marchand | Justine Franconville |
