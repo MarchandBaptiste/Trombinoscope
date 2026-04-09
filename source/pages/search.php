@@ -12,7 +12,7 @@ $classes = $db->query("SELECT class_id, name FROM class ORDER BY class_id")->fet
 ?>
 <div class="upper-band">
     <div>
-        <h1>Toute nos promos</h1>
+        <h1>Toutes nos promos</h1>
     </div>
     <form action="" method="get" class="search">
         <input type="text" name="search" id="search" value="<?= htmlspecialchars($search) ?>" placeholder="Votre recherche...">

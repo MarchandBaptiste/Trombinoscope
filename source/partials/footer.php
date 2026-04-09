@@ -28,7 +28,7 @@
         </nav>
       </div>
       <div class="link">
-        <h3>Mention légale</h3>
+        <h3>Mentions légales</h3>
         <a href="/source/pages/pdc.php">Politique de confidentialité</a>
       </div>
     </div>
