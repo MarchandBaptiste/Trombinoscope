@@ -705,8 +705,20 @@ article div:last-child {
   color: rgba(180, 120, 255, 0.9);
   pointer-events: none;
 }
-.btn-cta .valide {
-  width: 400px;
+#btn-etape-suivante{
+  display: none;
+}
+.champs-wrapper h2, .champs-wrapper p{
+  display: none;
+}
+.actions-inline .btn-cta {
+  width: 100%;
+}
+#btn-etape-precedente {
+  display: none;
+}
+.overlay-container {
+  display: none;
 }
 
 .message-retour {
@@ -881,7 +893,19 @@ footer div .footer-link {
     min-height: 600px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
   }
+#btn-etape-suivante{
+  display: block;
+}
+.champs-wrapper h2, .champs-wrapper p{
+  display: block;
+}
 
+#btn-etape-precedente {
+  display: block;
+}
+.overlay-container {
+  display: block;
+}
   /* Base du formulaire */
   .formulaire {
     width: 100%;
@@ -890,7 +914,7 @@ footer div .footer-link {
     border: 0px solid transparent;
     box-shadow: none;
   }
-  
+
   .champs-wrapper {
     padding: 0 40px;
     display: flex;
