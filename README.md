@@ -3,7 +3,7 @@
 Une application web de trombinoscope inspirée des *Yearbooks* américains, développée dans le cadre d'un projet scolaire à **La Manu, École des métiers du numérique**.
 
 Chaque élève dispose d'une fiche avec sa photo, son nom, sa classe et sa citation personnelle. Les administrateurs peuvent gérer l'annuaire de manière entièrement dynamique.
-
+[La maquette](https://www.figma.com/design/ZNUnhXznAcsiR30PAlMUPO/trombinoscope?node-id=0-1&p=f)
 ---
 
 ## ✨ Fonctionnalités
