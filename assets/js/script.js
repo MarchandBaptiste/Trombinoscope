@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function checkVisibility() {
+  document.querySelectorAll(".card").forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      el.classList.add("visible");
+    }
+  });
+  document.querySelectorAll(".inscription-wrapper").forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      el.classList.add("visible");
+    }
+  });
+}
+window.addEventListener("scroll", checkVisibility);
+window.addEventListener("load", checkVisibility);
+checkVisibility();
 
 function updatePhotoLabel(input) {
   const label = document.getElementById("upload-label");
