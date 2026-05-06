@@ -46,6 +46,6 @@ Le schéma suit une approche **Merise** avec les entités principales :
 
 ---
 
-## 📌 Contexte
+## Contexte
 
-Projet réalisé en **première année Bachelor Développement** à [La Manu](https://la-manu.fr) — Amiens.
+Projet réalisé en **première année Bachelor Développement**.
