@@ -1,23 +1,23 @@
-# 🎓 Trombinoscope — La Manu
+# Trombinoscope
 
-Une application web de trombinoscope inspirée des *Yearbooks* américains, développée dans le cadre d'un projet scolaire à **La Manu, École des métiers du numérique**.
+Une application web de trombinoscope inspirée des *Yearbooks* américains, développée dans le cadre d'un projet scolaire à **La Manu**.
 
 Chaque élève dispose d'une fiche avec sa photo, son nom, sa classe et sa citation personnelle. Les administrateurs peuvent gérer l'annuaire de manière entièrement dynamique.
 
 [La maquette](https://www.figma.com/design/ZNUnhXznAcsiR30PAlMUPO/trombinoscope?node-id=0-1&p=f)
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 📋 **Fiches élèves** — nom, prénom, classe et citation (Yearbook Quote)
-- 📸 **Upload de photos** — formats `.jpg` et `.png`, avec vérification du poids et de l'extension
-- 🗂️ **Filtrage par niveau** — afficher uniquement les élèves d'une promotion (B1, B2, B3…)
-- 🔐 **Interface d'administration** — espace dédié pour ajouter et gérer les profils
-- 🎨 **UI personnalisée** — design moderne aux couleurs de La Manu
+- **Fiches élèves** — nom, prénom, classe et citation (Yearbook Quote)
+- **Upload de photos** — formats `.jpg` et `.png`, avec vérification du poids et de l'extension
+- **Filtrage par niveau** — afficher uniquement les élèves d'une promotion (B1, B2, B3…)
+- **Interface d'administration** — espace dédié pour ajouter et gérer les profils
+- **UI personnalisée** — design moderne
 
 ---
 
-## 🛠️ Stack technique
+## Stack technique
 
 | Côté | Technologies |
 |------|-------------|
@@ -28,7 +28,7 @@ Chaque élève dispose d'une fiche avec sa photo, son nom, sa classe et sa citat
 
 ---
 
-## 🗄️ Structure de la base de données
+## Structure de la base de données
 
 Le schéma suit une approche **Merise** avec les entités principales :
 
@@ -37,7 +37,7 @@ Le schéma suit une approche **Merise** avec les entités principales :
 
 ---
 
-## 👥 Équipe & Répartition
+## Équipe & Répartition
 
 | | Baptiste Marchand | Justine Franconville |
 |---|---|---|
