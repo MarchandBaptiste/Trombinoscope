@@ -49,3 +49,9 @@ Le schéma suit une approche **Merise** avec les entités principales :
 ## 📌 Contexte
 
 Projet réalisé en **première année Bachelor Développement** à [La Manu](https://la-manu.fr) — Amiens.
+
+## Pour tester le mode Administrateur 
+
+Identifiant / Login : admin
+
+Mot de passe : Vyurthfbc6rz:
